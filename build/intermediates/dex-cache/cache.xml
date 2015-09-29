@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\classes-ebff11f05ab1f8f376a75ff5e95fba43356c346a.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nguyen Dinh Duc\.gradle\caches\modules-2\files-2.1\com.nostra13.universalimageloader\universal-image-loader\1.9.4\dd9eeb557650c4ad7394df23f0f5cf27a7cfc697\universal-image-loader-1.9.4.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="dd9eeb557650c4ad7394df23f0f5cf27a7cfc697">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.4-ef0e6b17f6a299d5a8d8ec85fd00caa374b37612.jar" />
+    </item>
+    <item
+        jar="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1ccbc26be2c465c622a48310e8092241b01abe80">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\classes-b767391afec1a40687b57f46d83ab12399a071fb.jar" />
+    </item>
+    <item
+        jar="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.0.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\classes-13dec08064213ea87ff26393ed6b411b77409d44.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nguyen Dinh Duc\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-android\1.2.1\44780c2cf98f6a3cf4e77f1234d644758b329201\bolts-android-1.2.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="44780c2cf98f6a3cf4e77f1234d644758b329201">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\bolts-android-1.2.1-0dcf0f6492d5b9e98c2299994a71b68a49e839ac.jar" />
+    </item>
+    <item
+        jar="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\exploded-aar\MobileOnline\viewPagerIndicatorLibrary\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="72f5133cc6f12126d84a88df98e95b2cc6336d54">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\classes-f6f77b8117e43783cf48c891a7e9a4281d9308dd.jar" />
+    </item>
+    <item
+        jar="C:\Users\Nguyen Dinh Duc\.gradle\caches\modules-2\files-2.1\com.readystatesoftware.systembartint\systembartint\1.0.3\de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287\systembartint-1.0.3.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\systembartint-1.0.3-55c9b0ffd372c7d85f3fba21aec619598bf4dfc4.jar" />
+    </item>
+    <item
+        jar="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\exploded-aar\de.hdodenhof\circleimageview\1.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="ac6948cce36f694f3eb3d73a135e298dc4b3527a">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\classes-eb12600635185c5b088930335f0dee6f87f15340.jar" />
+    </item>
+    <item
+        jar="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.0-fcb58c4efbbcd4c59162131a0e16e15d27237fba.jar" />
+    </item>
+    <item
+        jar="F:\Informatics\Android\Android SDK\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.0-5c24f7508abd4d227d1ae32447a6f9a7a7de76d0.jar" />
+    </item>
+    <item
+        jar="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\libs\Parse-1.10.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="181b435832725bec96c11ff568bdfbccdacab944">
+        <dex dex="F:\Informatics\Android\AndroidstudioProjects\MobileOnline\app\build\intermediates\pre-dexed\debug\Parse-1.10.1-895b9012ac3476655bfe433ffabed40f15107570.jar" />
+    </item>
+
+</items>

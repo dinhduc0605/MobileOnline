@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Mobile Online</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_search">Search</string>
+    <string name="drawer_open">open drawer</string>
+    <string name="drawer_close">close drawer</string>
+    <array name="user_menu">
+        <item>Menu</item>
+        <item>Store</item>
+        <item>Categories</item>
+        <item>History</item>
+        <item>News</item>
+        <item>Detail</item>
+        <item>About Us</item>
+        <item>Sign Out</item>
+        <item>Exit</item>
+    </array>
+    <array name="guest_menu">
+        <item>Sign In</item>
+        <item>Menu</item>
+        <item>Store</item>
+        <item>Categories</item>
+        <item>News</item>
+        <item>Detail</item>
+        <item>About Us</item>
+        <item>Exit</item>
+    </array>
+    <string name="profile">Profile</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="birthday">BirthDay</string>
+    <string name="gender">Gender</string>
+    <string name="more">More</string>
+
+    <string name="login_user_hint">Enter username here</string>
+    <string name="login_password_hint">Enter password here</string>
+    <string name="title_activity_search">Search Products</string>
+    <string name="action_settings">Settings</string>
+    <string name="query_hint">Search products</string>
+    <string name="title_activity_about">About Us</string>
+
+    <string name="about_us">Cửa hàng của chúng tôi là vô đối. Các bạn thích thì mua, ko thì biến =))))</string>
+</resources>
