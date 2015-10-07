@@ -2,6 +2,7 @@
 <resources>
     <color name="actionbar_bg">#673AB7</color>
     <color name="indicator">#669900</color>
-    <color name="button">#669900</color>
+    <color name="button">@android:color/white</color>
     <color name="activated">#e2e2e2</color>
+    <color name="button_press">#cccccc</color>
 </resources>

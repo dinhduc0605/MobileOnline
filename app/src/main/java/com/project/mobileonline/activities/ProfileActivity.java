@@ -22,6 +22,7 @@ import android.widget.ImageView;
 import com.project.mobileonline.R;
 import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.utils.HelperClass;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,6 +43,9 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        SystemBarTintManager manager = new SystemBarTintManager(this);
+        manager.setStatusBarTintEnabled(true);
+        manager.setTintResource(R.color.actionbar_bg);
         initView();
         getWidgetControl();
     }

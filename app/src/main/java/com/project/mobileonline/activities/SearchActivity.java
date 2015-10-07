@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.project.mobileonline.R;
+import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class SearchActivity extends AppCompatActivity {
     ActionBar actionBar;
@@ -21,6 +22,9 @@ public class SearchActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+        SystemBarTintManager manager = new SystemBarTintManager(this);
+        manager.setStatusBarTintEnabled(true);
+        manager.setTintResource(R.color.actionbar_bg);
     }
 
     @Override

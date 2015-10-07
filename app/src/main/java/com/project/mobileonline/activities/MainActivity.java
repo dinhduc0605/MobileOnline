@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -24,8 +23,11 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 
+import com.parse.Parse;
+import com.parse.ParseUser;
 import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.DrawerAdapter;
+import com.project.mobileonline.fragments.CategoriesFrament;
 import com.project.mobileonline.fragments.HistoryFragment;
 import com.project.mobileonline.fragments.NewsFragment;
 import com.project.mobileonline.fragments.StoreFragment;
@@ -37,9 +39,10 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 import java.io.File;
 import java.util.ArrayList;
 
+import static com.project.mobileonline.activities.LoadingActivity.login;
+
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
-    static boolean login = true;
     ActionBar actionBar;
     DrawerLayout drawerLayout;
     ListView drawerMenu;
@@ -78,10 +81,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SystemBarTintManager manager = new SystemBarTintManager(this);
-        manager.setStatusBarTintEnabled(true);
-        manager.setTintResource(R.color.actionbar_bg);
-
         initData();
         initView();
         getControlWidget();
@@ -99,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < titles.length; i++) {
             DrawerItem item = new DrawerItem(iconRes[i], titles[i]);
             items.add(item);
-            Log.w(TAG, items.get(i).getTitle() + "-" + items.get(i).getIconRes());
         }
 
         currentUser = new User();
@@ -116,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         login = false;
         initData();
         adapter.notifyDataSetChanged();
+        ParseUser.logOut();
     }
 
     private void addHeaderView() {
@@ -136,10 +135,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        // Enable Local Datastore.
-//        Parse.enableLocalDatastore(this);
-        //nit parse
-//        Parse.initialize(this, "OYyLBiBkt53DVu4CXCBbr4UgCpQFMoeUisusPQWa", "i1WGIaqAT2Pvqy0E1SY1HhwHbf15KnSJHGBigdl1");
+        SystemBarTintManager manager = new SystemBarTintManager(this);
+        manager.setStatusBarTintEnabled(true);
+        manager.setTintResource(R.color.actionbar_bg);
 
         mDrawerTitle = getResources().getString(R.string.app_name);
         Toolbar toolbar = (Toolbar) findViewById(R.id.actionbar);
@@ -176,7 +174,6 @@ public class MainActivity extends AppCompatActivity {
         drawerMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.w(TAG, position + "");
                 selectItem(position);
             }
         });
@@ -194,6 +191,9 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 case 2:
                     fragment = new StoreFragment();
+                    break;
+                case 3:
+                    fragment = new CategoriesFrament();
                     break;
                 case 4:
                     fragment = new HistoryFragment();
@@ -216,11 +216,14 @@ public class MainActivity extends AppCompatActivity {
         } else {
             switch (position) {
                 case 0:
-                    Intent intent = new Intent(this, LoginAcitivity.class);
+                    Intent intent = new Intent(this, SignInActivity.class);
                     startActivity(intent);
                     finish();
                 case 2:
                     fragment = new StoreFragment();
+                    break;
+                case 3:
+                    fragment = new CategoriesFrament();
                     break;
                 case 4:
                     fragment = new NewsFragment();

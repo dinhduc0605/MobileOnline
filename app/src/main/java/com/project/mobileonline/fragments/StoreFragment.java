@@ -61,8 +61,8 @@ public class StoreFragment extends Fragment {
         slide = (ViewPager) view.findViewById(R.id.view_pager);
         SlideAdapter adapter = new SlideAdapter();
         slide.setAdapter(adapter);
-        indicator = (CirclePageIndicator) view.findViewById(R.id.indicator);
-        indicator.setViewPager(slide);
+//        indicator = (CirclePageIndicator) view.findViewById(R.id.indicator);
+//        indicator.setViewPager(slide);
 
         recentItems = new ArrayList<>();
         recentItems.add(new ProductGridItem());
