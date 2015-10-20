@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.project.mobileonline.R;
 import com.project.mobileonline.fragments.BestSellerTabFragment;
 import com.project.mobileonline.fragments.ManufactureTabFragment;
 import com.project.mobileonline.fragments.OldProductTabFragment;
