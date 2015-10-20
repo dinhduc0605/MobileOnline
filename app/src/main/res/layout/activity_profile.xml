@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -14,14 +14,13 @@
             android:layout_height="match_parent"
             android:paddingTop="?attr/actionBarSize">
 
-
             <ImageView
                 android:id="@+id/background_profile"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:layout_below="@+id/actionbar"
-                android:scaleType="fitXY"
-                android:src="@drawable/header_view_bg" />
+                android:scaleType="centerCrop"
+                android:src="@drawable/header_view_background" />
 
             <TextView
                 android:id="@+id/name_profile"
@@ -34,7 +33,7 @@
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            <com.mikhaellopez.circularimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/avatar_icon"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
@@ -43,7 +42,8 @@
                 android:layout_marginTop="-35dp"
                 android:src="@drawable/ic_guest_circle_black_48dp"
                 app:border_color="#ffffff"
-                app:border_width="2dp" />
+                app:border_width="2dp"
+                app:shadow="true" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -160,7 +160,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="@string/email" />
+                                    android:text="@string/address" />
                             </LinearLayout>
                         </LinearLayout>
                         />
@@ -185,6 +185,42 @@
                             android:textStyle="bold" />
 
                         <View style="@style/Divider" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/cardview_padding">
+
+                            <TextView
+                                android:id="@+id/firstName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/firstName" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/cardview_padding">
+
+                            <TextView
+                                android:id="@+id/lastName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/lastName" />
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"

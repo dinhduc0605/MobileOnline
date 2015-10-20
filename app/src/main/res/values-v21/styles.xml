@@ -4,7 +4,6 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="android:activatedBackgroundIndicator">@drawable/listitem_background</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="colorAccent">@color/actionbar_bg</item>
+        <item name="colorAccent">@color/accent_color</item>
     </style>
 </resources>

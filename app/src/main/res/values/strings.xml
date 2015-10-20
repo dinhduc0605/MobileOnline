@@ -30,6 +30,8 @@
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="address">Address</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
     <string name="birthday">BirthDay</string>
     <string name="gender">Gender</string>
     <string name="more">More</string>
@@ -43,4 +45,17 @@
     <string name="title_activity_about">About Us</string>
 
     <string name="about_us">Cửa hàng của chúng tôi là vô đối. Các bạn thích thì mua, ko thì biến =))))</string>
+    <string name="manufacture">Manufacture</string>
+    <string name="bestseller">Best Seller</string>
+    <string name="saleoff">Sale Off</string>
+    <string name="oldproduct">Old Product</string>
+    <string-array name="categoriesTab">
+        <item>Manufacture</item>
+        <item>Best Seller</item>
+        <item>Sale Off</item>
+        <item>Old Product</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

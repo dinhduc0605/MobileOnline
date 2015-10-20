@@ -24,7 +24,7 @@ public class SearchActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         SystemBarTintManager manager = new SystemBarTintManager(this);
         manager.setStatusBarTintEnabled(true);
-        manager.setTintResource(R.color.actionbar_bg);
+        manager.setTintResource(R.color.primary_color);
     }
 
     @Override

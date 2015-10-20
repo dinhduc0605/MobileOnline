@@ -8,10 +8,10 @@
         android:id="@+id/header_view_bg"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/header_view_bg" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/header_view_background" />
 
-    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.mikhaellopez.circularimageview.CircularImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_icon"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -19,7 +19,8 @@
         android:scaleType="centerCrop"
         android:src="@drawable/ic_guest_circle_black_48dp"
         app:border_color="#ffffff"
-        app:border_width="2dp" />
+        app:border_width="2dp"
+        app:shadow="true" />
 
     <TextView
         android:id="@+id/name_header_view"
@@ -27,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/profile_icon"
         android:layout_marginLeft="16dp"
-        android:text="Nguyen Dinh Duc"
         android:textColor="@android:color/white" />
 
     <TextView
@@ -36,6 +36,5 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/name_header_view"
         android:layout_marginLeft="16dp"
-        android:text="dinhduc0605@gmail.com"
         android:textColor="@android:color/white" />
 </RelativeLayout>

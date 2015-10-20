@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.project.mobileonline.activities.ProductDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="?attr/actionBarSize">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/productSlide"
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+            </android.support.v4.view.ViewPager>
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productSlide"
+                android:text="Iphone 5s"
+                android:textSize="32sp" />
+
+            <Button
+                android:id="@+id/orderBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/productName"
+                android:text="Order" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/CustomRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/productName"
+                android:layout_toLeftOf="@+id/orderBtn" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <include layout="@layout/toolbar" />
+</RelativeLayout>

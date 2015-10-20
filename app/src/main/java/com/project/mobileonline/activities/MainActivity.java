@@ -6,6 +6,7 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -15,15 +16,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
-import com.parse.Parse;
+import com.mikhaellopez.circularimageview.CircularImageView;
 import com.parse.ParseUser;
 import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.DrawerAdapter;
@@ -33,13 +34,13 @@ import com.project.mobileonline.fragments.NewsFragment;
 import com.project.mobileonline.fragments.StoreFragment;
 import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.models.DrawerItem;
-import com.project.mobileonline.models.User;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.io.File;
 import java.util.ArrayList;
 
 import static com.project.mobileonline.activities.LoadingActivity.login;
+import static com.project.mobileonline.models.Constants.*;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
@@ -51,9 +52,9 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle drawerToggle;
     String mTitle, mDrawerTitle;
     String[] titles;
-    User currentUser;
+    ParseUser currentUser;
     String avatarPath;
-
+    FloatingActionButton fab;
     int[] userIconRes = {
             0,
             R.drawable.ic_store_black_48dp,
@@ -100,11 +101,12 @@ public class MainActivity extends AppCompatActivity {
             items.add(item);
         }
 
-        currentUser = new User();
-        currentUser.setName("Nguyen Dinh Duc");
-        File dir = new File(Constants.DIRECTORY_PATH + currentUser.getName());
-        if (!dir.exists()) {
-            dir.mkdirs();
+        if (login) {
+            currentUser = ParseUser.getCurrentUser();
+            File dir = new File(Constants.DIRECTORY_PATH + currentUser.getString("username"));
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
         }
     }
 
@@ -118,13 +120,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addHeaderView() {
+        String name = currentUser.getString(USERNAME);
         View view = getLayoutInflater().inflate(R.layout.drawer_header_view, null);
-        ImageView imageView = (ImageView) view.findViewById(R.id.profile_icon);
-        avatarPath = Constants.DIRECTORY_PATH + "Nguyen Dinh Duc/" + Constants.AVATAR_IMAGE_NAME;
+        CircularImageView imageView = (CircularImageView) view.findViewById(R.id.profile_icon);
+        avatarPath = Constants.DIRECTORY_PATH + name + "/" + Constants.AVATAR_IMAGE_NAME;
         Bitmap bitmap = BitmapFactory.decodeFile(avatarPath);
         if (bitmap != null) {
             imageView.setImageBitmap(bitmap);
         }
+        TextView username = (TextView) view.findViewById(R.id.name_header_view);
+        username.setText(name);
+        TextView email = (TextView) view.findViewById(R.id.email_header_view);
+        email.setText(currentUser.getString("email"));
         view.setTag("hv");
         drawerMenu.addHeaderView(view);
     }
@@ -137,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         SystemBarTintManager manager = new SystemBarTintManager(this);
         manager.setStatusBarTintEnabled(true);
-        manager.setTintResource(R.color.actionbar_bg);
+        manager.setTintResource(R.color.primary_color);
 
         mDrawerTitle = getResources().getString(R.string.app_name);
         Toolbar toolbar = (Toolbar) findViewById(R.id.actionbar);
@@ -155,18 +162,27 @@ public class MainActivity extends AppCompatActivity {
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
                 actionBar.setTitle(mTitle);
+                fab.setVisibility(View.VISIBLE);
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 actionBar.setTitle(mDrawerTitle);
+                fab.setVisibility(View.INVISIBLE);
             }
         };
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
-
         selectItem(2);
+
+        fab = (FloatingActionButton) findViewById(R.id.fabSearch);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getBaseContext(), SearchActivity.class));
+            }
+        });
     }
 
     private void getControlWidget() {
@@ -297,10 +313,6 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_search) {
-            Intent intent = new Intent(this, SearchActivity.class);
-            startActivity(intent);
-        }
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
