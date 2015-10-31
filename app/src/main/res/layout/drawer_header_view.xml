@@ -17,10 +17,9 @@
         android:layout_height="70dp"
         android:layout_margin="16dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_guest_circle_black_48dp"
+        android:src="@drawable/ic_account_circle_black_48dp"
         app:border_color="#ffffff"
-        app:border_width="2dp"
-        app:shadow="true" />
+        app:border_width="2dp"/>
 
     <TextView
         android:id="@+id/name_header_view"

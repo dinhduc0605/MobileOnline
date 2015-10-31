@@ -3,6 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.project.mobileonline.activities.HistoryDetail">
+    android:fitsSystemWindows="true"
+    tools:context="com.project.mobileonline.activities.HistoryDetailActivity">
 
+    <ListView
+        android:id="@+id/listProductHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+    </ListView>
+
+    <include layout="@layout/toolbar" />
 </RelativeLayout>

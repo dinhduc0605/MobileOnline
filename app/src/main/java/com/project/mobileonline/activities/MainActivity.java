@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,8 +24,14 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.parse.GetCallback;
+import com.parse.LogOutCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.DrawerAdapter;
@@ -40,7 +47,9 @@ import java.io.File;
 import java.util.ArrayList;
 
 import static com.project.mobileonline.activities.LoadingActivity.login;
-import static com.project.mobileonline.models.Constants.*;
+import static com.project.mobileonline.models.Constants.PRODUCT_NAME;
+import static com.project.mobileonline.models.Constants.PRODUCT_TABLE;
+import static com.project.mobileonline.models.Constants.USERNAME;
 
 public class MainActivity extends AppCompatActivity {
     public static final String TAG = "MainActivity";
@@ -116,7 +125,16 @@ public class MainActivity extends AppCompatActivity {
         login = false;
         initData();
         adapter.notifyDataSetChanged();
-        ParseUser.logOut();
+        ParseUser.logOutInBackground(new LogOutCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e != null) {
+                    Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getBaseContext(), "signed out", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private void addHeaderView() {
@@ -145,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
         SystemBarTintManager manager = new SystemBarTintManager(this);
         manager.setStatusBarTintEnabled(true);
         manager.setTintResource(R.color.primary_color);
-
         mDrawerTitle = getResources().getString(R.string.app_name);
         Toolbar toolbar = (Toolbar) findViewById(R.id.actionbar);
         setSupportActionBar(toolbar);
@@ -172,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 fab.setVisibility(View.INVISIBLE);
             }
         };
+
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         selectItem(2);
@@ -265,7 +283,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void displayExitDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(titles[6])
+        builder.setTitle("Exit")
                 .setMessage("Do you want to exit?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -310,16 +328,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clicks on the Home/Up long_button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
+        switch (item.getItemId()) {
+            case R.id.cart:
+                Intent intent = new Intent(this, CartActivity.class);
+                startActivity(intent);
+                break;
+        }
 
         return super.onOptionsItemSelected(item);
     }

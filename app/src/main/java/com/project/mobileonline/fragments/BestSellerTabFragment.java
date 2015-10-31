@@ -3,17 +3,23 @@ package com.project.mobileonline.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.project.mobileonline.R;
+import com.project.mobileonline.adapters.ProductListViewAdapter;
+import com.project.mobileonline.models.Product;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BestSellerTabFragment extends Fragment {
-
+public class BestSellerTabFragment extends ListFragment {
+    ProductListViewAdapter adapter;
+    ArrayList<Product> products;
 
     public BestSellerTabFragment() {
         // Required empty public constructor
@@ -24,7 +30,15 @@ public class BestSellerTabFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_best_seller_tab, container, false);
+        View view = inflater.inflate(R.layout.fragment_best_seller_tab, container, false);
+        products = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            products.add(new Product());
+        }
+
+        adapter = new ProductListViewAdapter(getContext(), R.layout.list_item_product_categories, products);
+        setListAdapter(adapter);
+        return view;
     }
 
 

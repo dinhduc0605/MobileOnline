@@ -34,7 +34,7 @@ public class SlideAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         ImageView slideImage = new ImageView(context);
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        slideImage.setScaleType(ImageView.ScaleType.FIT_XY);
+        slideImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
         slideImage.setLayoutParams(layoutParams);
         ImageLoader imageLoader = ImageLoader.getInstance();
 

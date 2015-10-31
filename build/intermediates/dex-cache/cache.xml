@@ -2,6 +2,13 @@
 <items version="2" >
 
     <item
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2a7e47da654546f9457deb6132364f1bf33a1857">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-7a5177608efd03254690643d4e80ee1e37f16bbf.jar" />
+    </item>
+    <item
         jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
@@ -9,32 +16,18 @@
         <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-b8e6aa68cfcfb50cf92a3751a6bd4c2b362dda4b.jar" />
     </item>
     <item
-        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.mikhaellopez/circularimageview/2.0.1/jars/classes.jar"
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="ad9502cba7a9672b025189f400ff37537867dd75">
-        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-76230b91c4cf88c953a29d40affbf503180b3a54.jar" />
+        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-550633b2998c59b77743f2102857aad02e3078a5.jar" />
     </item>
     <item
-        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
-        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-010034ea9c88887bde2bb64f07887c7f469932c3.jar" />
-    </item>
-    <item
-        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/libs/Parse-1.10.2.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a859414011ce2c18187acc83319688e6bd340635">
-        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/Parse-1.10.2-1b703672cea1664886c4c7cd0d8b47f64671b24c.jar" />
-    </item>
-    <item
-        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
-        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-2f10ea62bd44bf8f0f83b519b2607f8283f932b5.jar" />
+        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-a17c9c26c47e4405f0059f05b486f907c9f8f6e3.jar" />
     </item>
     <item
         jar="/home/nguyendinhduc/.gradle/caches/modules-2/files-2.1/com.nostra13.universalimageloader/universal-image-loader/1.9.4/dd9eeb557650c4ad7394df23f0f5cf27a7cfc697/universal-image-loader-1.9.4.jar"
@@ -44,18 +37,18 @@
         <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/universal-image-loader-1.9.4-dc55d7da574a043b92896ff97ec4c3c391d9573f.jar" />
     </item>
     <item
-        jar="/home/nguyendinhduc/.gradle/caches/modules-2/files-2.1/com.readystatesoftware.systembartint/systembartint/1.0.3/de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287/systembartint-1.0.3.jar"
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.mikhaellopez/circularimageview/2.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287">
-        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/systembartint-1.0.3-b28511932fdb9f5f2fc2c421cb415f3fef83622f.jar" />
+        sha1="ad9502cba7a9672b025189f400ff37537867dd75">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-76230b91c4cf88c953a29d40affbf503180b3a54.jar" />
     </item>
     <item
-        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/MobileOnline/viewPagerIndicatorLibrary/unspecified/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
-        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-781482cf0dd38403f9f21d321eed15adaac0ea21.jar" />
+        sha1="322a60928bdf36518e484b423f8866a2eac7ec56">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-9003509a2c2c56897bf236112c120a93fe690168.jar" />
     </item>
     <item
         jar="/home/nguyendinhduc/Study/AndroidSdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
@@ -65,11 +58,18 @@
         <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-8a409a4cdf7862509d7e2538f08a997e4a1bb4c5.jar" />
     </item>
     <item
-        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/MobileOnline/viewPagerIndicatorLibrary/unspecified/jars/classes.jar"
+        jar="/home/nguyendinhduc/.gradle/caches/modules-2/files-2.1/com.readystatesoftware.systembartint/systembartint/1.0.3/de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287/systembartint-1.0.3.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="10d7373f96b7b45965a2ba7722b871929f6712d8">
-        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-9003509a2c2c56897bf236112c120a93fe690168.jar" />
+        sha1="de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/systembartint-1.0.3-b28511932fdb9f5f2fc2c421cb415f3fef83622f.jar" />
+    </item>
+    <item
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-010034ea9c88887bde2bb64f07887c7f469932c3.jar" />
     </item>
     <item
         jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
@@ -86,11 +86,32 @@
         <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.1-372c1ee9eca2f56a6c5afbfbd783b168ba887274.jar" />
     </item>
     <item
-        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/jars/classes.jar"
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
-        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
-        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-550633b2998c59b77743f2102857aad02e3078a5.jar" />
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-2f10ea62bd44bf8f0f83b519b2607f8283f932b5.jar" />
+    </item>
+    <item
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="82825756edeeb3b56b15e73b2edd56e93da5a444">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/classes-ba875f7d5dc8899598fa8e3b653eb832a1534d3d.jar" />
+    </item>
+    <item
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-781482cf0dd38403f9f21d321eed15adaac0ea21.jar" />
+    </item>
+    <item
+        jar="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/libs/Parse-1.10.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a859414011ce2c18187acc83319688e6bd340635">
+        <dex dex="/media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/build/intermediates/pre-dexed/debug/Parse-1.10.2-1b703672cea1664886c4c7cd0d8b47f64671b24c.jar" />
     </item>
 
 </items>

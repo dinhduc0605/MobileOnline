@@ -2,8 +2,11 @@
 <resources>
     <color name="accent_color">#673AB7</color>
     <color name="primary_color">#673AB7</color>
-    <color name="indicator">#669900</color>
-    <color name="button">@android:color/white</color>
-    <color name="activated">#e2e2e2</color>
-    <color name="button_press">#cccccc</color>
+    <color name="indicator">#673AB7</color>
+    <color name="long_button_normal">#ffca28</color>
+    <color name="activated">#1A000000</color>
+    <color name="long_button_press">#ffb300</color>
+    <color name="more_button_normal">#7e57c2</color>
+    <color name="more_button_press">#5e35b1</color>
+
 </resources>

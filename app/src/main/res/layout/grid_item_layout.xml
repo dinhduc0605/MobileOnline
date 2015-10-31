@@ -5,36 +5,43 @@
     android:orientation="vertical">
 
     <android.support.v7.widget.CardView
+        android:id="@+id/gridViewItem"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
 
         <RelativeLayout
-            android:layout_width="120dp"
-            android:layout_height="180dp">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/productImage"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/productName"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/l" />
 
             <TextView
                 android:id="@+id/productName"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/productPrice"
-                android:padding="2dp"
-                android:text="Iphone 6s" />
+                android:layout_below="@id/productImage"
+                android:padding="2dp" />
+
+            <RatingBar
+                android:id="@+id/ratingBarGridItem"
+                style="?android:ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/productName"
+                android:rating="3.5" />
 
             <TextView
                 android:id="@+id/productPrice"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:padding="2dp"
-                android:text="100$" />
+                android:layout_below="@id/ratingBarGridItem"
+                android:padding="2dp" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

@@ -1,53 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="com.project.mobileonline.activities.ProductDetailActivity">
 
-    <ScrollView
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
+        <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingTop="?attr/actionBarSize">
+            android:layout_height="256dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/productSlide"
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
                 android:layout_width="match_parent"
-                android:layout_height="250dp">
+                android:layout_height="match_parent"
+                app:contentScrim="@color/primary_color"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-            </android.support.v4.view.ViewPager>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/header_view_background" />
 
-            <TextView
-                android:id="@+id/productName"
-                android:layout_width="wrap_content"
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/actionbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:minHeight="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                </android.support.v7.widget.Toolbar>
+            </android.support.design.widget.CollapsingToolbarLayout>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/productSlide"
-                android:text="Iphone 5s"
-                android:textSize="32sp" />
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin">
 
-            <Button
-                android:id="@+id/orderBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_below="@+id/productName"
-                android:text="Order" />
+                <TextView
+                    android:id="@+id/detailPrice"
+                    style="@style/detailPrice"
+                    android:text="16.000.000" />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="@style/CustomRatingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/productName"
-                android:layout_toLeftOf="@+id/orderBtn" />
+                <TextView
+                    android:id="@+id/productQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantity: 10"
+                    android:textSize="15sp" />
 
-        </RelativeLayout>
-    </ScrollView>
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    style="@style/CustomRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:isIndicator="false" />
 
-    <include layout="@layout/toolbar" />
+                <Button
+                    android:id="@+id/addToCart"
+                    style="@style/longButton"
+                    android:text="Add to cart" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/previewProductSlide"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp">
+
+                </android.support.v7.widget.RecyclerView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:text="Specification"
+                    android:textSize="25sp" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="*">
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="Screen" />
+
+                        <TextView
+                            android:id="@+id/screenSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="Font Camera" />
+
+                        <TextView
+                            android:id="@+id/fontCameraSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="Back Camera" />
+
+                        <TextView
+                            android:id="@+id/backCameraSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="OS" />
+
+                        <TextView
+                            android:id="@+id/osSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="Graphic Chipset" />
+
+                        <TextView
+                            android:id="@+id/graphicSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="CPU" />
+
+                        <TextView
+                            android:id="@+id/cpuSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="RAM" />
+
+                        <TextView
+                            android:id="@+id/ramSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="Internal Storage" />
+
+                        <TextView
+                            android:id="@+id/internalSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="SDcard" />
+
+                        <TextView
+                            android:id="@+id/sdcardSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="Sim" />
+
+                        <TextView
+                            android:id="@+id/simSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="Battery" />
+
+                        <TextView
+                            android:id="@+id/batterySpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+
+                    <TableRow style="@style/specificationRow">
+
+                        <TextView
+                            style="@style/specificationTv"
+                            android:layout_weight="3"
+                            android:text="Connectivity" />
+
+                        <TextView
+                            android:id="@+id/connectSpec"
+                            style="@style/specificationTv"
+                            android:layout_weight="7" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

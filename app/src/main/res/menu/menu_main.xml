@@ -6,4 +6,9 @@
         android:id="@+id/action_setting"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/cart"
+        android:icon="@drawable/ic_shopping_cart_white_48dp"
+        android:title="Cart"
+        app:showAsAction="ifRoom" />
 </menu>

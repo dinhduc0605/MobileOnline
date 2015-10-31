@@ -5,14 +5,15 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.parse.ParseUser;
 import com.project.mobileonline.R;
@@ -40,8 +41,9 @@ public class ProfileActivity extends AppCompatActivity {
     ActionBar actionBar;
     ImageView avatar;
     String avatarPath;
-    TextView email, phone, address, firstName, lastName, birthday, gender;
+    EditText email, phone, address, firstName, lastName, birthday, gender;
     ParseUser currentUser;
+    boolean enable = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,13 +67,13 @@ public class ProfileActivity extends AppCompatActivity {
             avatar.setImageBitmap(bitmap);
         }
 
-        email = (TextView) findViewById(R.id.email_profile);
-        phone = (TextView) findViewById(R.id.phone_profile);
-        address = (TextView) findViewById(R.id.address_profile);
-        firstName = (TextView) findViewById(R.id.firstName);
-        lastName = (TextView) findViewById(R.id.lastName);
-        birthday = (TextView) findViewById(R.id.birthday_profile);
-        gender = (TextView) findViewById(R.id.gender_profile);
+        email = (EditText) findViewById(R.id.email_profile);
+        phone = (EditText) findViewById(R.id.phone_profile);
+        address = (EditText) findViewById(R.id.address_profile);
+        firstName = (EditText) findViewById(R.id.firstName);
+        lastName = (EditText) findViewById(R.id.lastName);
+        birthday = (EditText) findViewById(R.id.birthday_profile);
+        gender = (EditText) findViewById(R.id.gender_profile);
 
         ParseUser currentUser = ParseUser.getCurrentUser();
         email.setText(currentUser.getString(EMAIL));
@@ -79,10 +81,9 @@ public class ProfileActivity extends AppCompatActivity {
         address.setText(currentUser.getString(ADDRESS));
         firstName.setText(currentUser.getString(FIRSTNAME));
         lastName.setText(currentUser.getString(LASTNAME));
-        birthday.setText(currentUser.getString(BIRTHDAY));
-        gender.setText(currentUser.getString(GENDER));
+//        birthday.setText(currentUser.getDate(BIRTHDAY).toString());
+        gender.setText(currentUser.getBoolean(GENDER) ? "Male" : "Female");
     }
-
 
     private void getWidgetControl() {
         avatar.setOnClickListener(new View.OnClickListener() {
@@ -116,18 +117,47 @@ public class ProfileActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.menu_profile, menu);
+        return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == android.R.id.home) {
-            Intent intent = getIntent();
-            intent.putExtra("filepath", filePath);
-            setResult(RESULT_OK, intent);
-            finish();
+        switch (id) {
+            case android.R.id.home:
+                Intent intent = getIntent();
+                intent.putExtra("filepath", filePath);
+                setResult(RESULT_OK, intent);
+                finish();
+                break;
+            case R.id.editProfile:
+                enableOrDisable(email);
+                enableOrDisable(phone);
+                enableOrDisable(address);
+                enableOrDisable(firstName);
+                enableOrDisable(lastName);
+                enableOrDisable(birthday);
+                enableOrDisable(gender);
+                if (enable) {
+                    enable = false;
+                    item.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_mode_edit_white_24dp));
+
+                } else {
+                    enable = true;
+                    item.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_done_white_24dp));
+                }
+                break;
+
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void enableOrDisable(EditText editText) {
+        if (enable) {
+            editText.setEnabled(false);
+        } else {
+            editText.setEnabled(true);
+        }
     }
 }

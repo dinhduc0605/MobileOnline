@@ -15,6 +15,6 @@ public class NewsContentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_content);
         WebView webView = (WebView) findViewById(R.id.newsContent);
-        webView.loadUrl("http://fptshop.com.vn/tin-tuc/tin-moi/philips-lo-anh-smartphone-khung-co-cam-bien-van-tay-33262");
+        webView.loadData("<img src=\"http://www.joomlaworks.net/images/demos/galleries/abstract/7.jpg\" alt=\"Mountain View\">", "text/html", null);
     }
 }

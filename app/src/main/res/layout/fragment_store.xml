@@ -18,25 +18,25 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="10dp" />
+                android:layout_height="200dp" />
 
-            <!--<com.viewpagerindicator.CirclePageIndicator-->
-            <!--android:id="@+id/indicator"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_marginBottom="10dp"-->
-            <!--android:gravity="right"-->
-            <!--android:padding="5dp"-->
-            <!--app:fillColor="@color/indicator"-->
-            <!--app:radius="4dp" />-->
+            <com.viewpagerindicator.CirclePageIndicator
+                android:id="@+id/indicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:gravity="right"
+                android:padding="5dp"
+                app:fillColor="@color/indicator"
+                app:radius="4dp" />
         </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/activity_horizontal_margin">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Recent Products"
+                    android:text="@string/recentProduct"
                     android:textSize="@dimen/header_text_size" />
 
                 <android.support.v7.widget.CardView
@@ -56,6 +56,7 @@
                     android:layout_height="wrap_content">
 
                     <Button
+                        android:id="@+id/recentButton"
                         style="@style/ButtonStyle"
                         android:text="@string/more" />
                 </android.support.v7.widget.CardView>
@@ -65,7 +66,9 @@
                 android:id="@+id/recentProductGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="3">
+                android:layout_marginTop="5dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth">
 
             </GridView>
 
@@ -79,7 +82,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="High Products"
+                    android:text="@string/highProduct"
                     android:textSize="@dimen/header_text_size" />
 
                 <android.support.v7.widget.CardView
@@ -87,6 +90,7 @@
                     android:layout_height="wrap_content">
 
                     <Button
+                        android:id="@+id/highButton"
                         style="@style/ButtonStyle"
                         android:text="@string/more" />
                 </android.support.v7.widget.CardView>
@@ -96,7 +100,9 @@
                 android:id="@+id/highProductGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="3">
+                android:layout_marginTop="5dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth">
 
             </GridView>
 
@@ -110,7 +116,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Medium Products"
+                    android:text="@string/mediumProduct"
                     android:textSize="@dimen/header_text_size" />
 
                 <android.support.v7.widget.CardView
@@ -118,6 +124,7 @@
                     android:layout_height="wrap_content">
 
                     <Button
+                        android:id="@+id/mediumButton"
                         style="@style/ButtonStyle"
                         android:text="@string/more" />
                 </android.support.v7.widget.CardView>
@@ -127,7 +134,9 @@
                 android:id="@+id/mediumProductGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="3">
+                android:layout_marginTop="5dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth">
 
             </GridView>
 
@@ -141,7 +150,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Low Products"
+                    android:text="@string/lowProduct"
                     android:textSize="@dimen/header_text_size" />
 
                 <android.support.v7.widget.CardView
@@ -149,6 +158,7 @@
                     android:layout_height="wrap_content">
 
                     <Button
+                        android:id="@+id/lowButton"
                         style="@style/ButtonStyle"
                         android:text="@string/more" />
                 </android.support.v7.widget.CardView>
@@ -158,7 +168,9 @@
                 android:id="@+id/lowProductGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:numColumns="3">
+                android:layout_marginTop="5dp"
+                android:numColumns="3"
+                android:stretchMode="columnWidth">
 
             </GridView>
         </LinearLayout>

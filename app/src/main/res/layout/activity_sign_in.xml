@@ -25,8 +25,7 @@
                 android:id="@+id/usernameEditSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/user_hint"
-               />
+                android:hint="@string/user_hint" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -42,30 +41,25 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/view_margin"
                 android:hint="@string/password_hint"
-                android:inputType="textPassword"
-            />
+                android:inputType="textPassword" />
         </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/signIn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/longButton"
             android:layout_below="@+id/passwordLayout"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/view_margin"
-            android:background="@android:color/white"
             android:onClick="signIn"
             android:text="Sign In" />
 
         <Button
             android:id="@+id/signUp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/longButton"
             android:layout_below="@+id/signIn"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/view_margin"
-            android:background="@android:color/white"
-            android:onClick="signUp"
+            android:onClick="register"
             android:text="Sign Up" />
     </RelativeLayout>
 </RelativeLayout>

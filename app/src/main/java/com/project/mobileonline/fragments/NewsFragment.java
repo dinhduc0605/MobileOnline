@@ -28,7 +28,7 @@ public class NewsFragment extends ListFragment {
         newsArrayList.add(new News());
         newsArrayList.add(new News());
         newsArrayList.add(new News());
-        adapter = new NewsListAdapter(getContext(), R.layout.list_item_news_history_layout, newsArrayList);
+        adapter = new NewsListAdapter(getContext(), R.layout.list_item_news_layout, newsArrayList);
         setListAdapter(adapter);
         return inflater.inflate(R.layout.fragment_news_history, null, false);
     }

@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabIndicatorColor="@android:color/white"
-            app:tabMode="scrollable"
+            app:tabMode="fixed"
             app:theme="@style/ThemeOverlay.AppCompat.Dark">
 
         </android.support.design.widget.TabLayout>

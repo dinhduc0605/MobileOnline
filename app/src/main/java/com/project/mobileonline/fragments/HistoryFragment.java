@@ -24,7 +24,7 @@ public class HistoryFragment extends ListFragment {
         orders.add(new Order());
         orders.add(new Order());
         orders.add(new Order());
-        adapter = new HistoryListAdapter(getContext(), R.layout.list_item_news_history_layout, orders);
+        adapter = new HistoryListAdapter(getContext(), R.layout.list_item_history_layout, orders);
         setListAdapter(adapter);
         return inflater.inflate(R.layout.fragment_news_history, null, false);
     }

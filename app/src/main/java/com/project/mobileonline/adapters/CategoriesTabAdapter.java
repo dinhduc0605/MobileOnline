@@ -3,16 +3,18 @@ package com.project.mobileonline.adapters;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.util.Log;
 
+import com.project.mobileonline.fragments.AllTabFragment;
 import com.project.mobileonline.fragments.BestSellerTabFragment;
-import com.project.mobileonline.fragments.ManufactureTabFragment;
 import com.project.mobileonline.fragments.OldProductTabFragment;
 import com.project.mobileonline.fragments.SaleOffTabFragment;
 
 /**
  * Created by Nguyen Dinh Duc on 10/7/2015.
  */
-public class CategoriesTabAdapter extends FragmentPagerAdapter {
+public class CategoriesTabAdapter extends FragmentStatePagerAdapter {
     String[] tabTitles;
 
     public CategoriesTabAdapter(FragmentManager fm, String[] tabTitles) {
@@ -25,15 +27,19 @@ public class CategoriesTabAdapter extends FragmentPagerAdapter {
         Fragment fragment = new Fragment();
         switch (position) {
             case 0:
-                fragment = new ManufactureTabFragment();
+                Log.w("test", position + "");
+                fragment = new AllTabFragment();
                 break;
             case 1:
+                Log.w("test", position + "");
                 fragment = new BestSellerTabFragment();
                 break;
             case 2:
+                Log.w("test", position + "");
                 fragment = new SaleOffTabFragment();
                 break;
             case 3:
+                Log.w("test", position + "");
                 fragment = new OldProductTabFragment();
                 break;
         }
