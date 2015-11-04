@@ -24,10 +24,10 @@
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <ImageView
+                    android:id="@+id/backgroundProduct"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/header_view_background" />
+                    android:scaleType="centerCrop"/>
 
                 <android.support.v7.widget.Toolbar
                     android:id="@+id/actionbar"
@@ -55,14 +55,12 @@
 
                 <TextView
                     android:id="@+id/detailPrice"
-                    style="@style/detailPrice"
-                    android:text="16.000.000" />
+                    style="@style/detailPrice" />
 
                 <TextView
-                    android:id="@+id/productQuantity"
+                    android:id="@+id/detailProductQuantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quantity: 10"
                     android:textSize="15sp" />
 
                 <RatingBar
@@ -80,9 +78,9 @@
                     android:text="Add to cart" />
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/previewProductSlide"
+                    android:id="@+id/previewProductSmallSlide"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="90dp"
                     android:layout_marginTop="20dp">
 
                 </android.support.v7.widget.RecyclerView>
@@ -121,7 +119,7 @@
                             android:text="Font Camera" />
 
                         <TextView
-                            android:id="@+id/fontCameraSpec"
+                            android:id="@+id/frontCameraSpec"
                             style="@style/specificationTv"
                             android:layout_weight="7" />
                     </TableRow>
@@ -259,4 +257,6 @@
             </LinearLayout>
         </android.support.v4.widget.NestedScrollView>
     </android.support.design.widget.CoordinatorLayout>
+
+
 </RelativeLayout>

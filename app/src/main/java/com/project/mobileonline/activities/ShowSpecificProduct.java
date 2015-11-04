@@ -15,6 +15,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.ProductGridViewAdpater;
+import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.models.Product;
 import com.project.mobileonline.utils.ParseHelper;
 import com.project.mobileonline.utils.SetColoStatusBar;
@@ -22,6 +23,8 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.project.mobileonline.models.Constants.NORMAL_PRODUCT;
 
 public class ShowSpecificProduct extends AppCompatActivity {
 
@@ -50,12 +53,12 @@ public class ShowSpecificProduct extends AppCompatActivity {
         actionBar.setTitle(intent.getStringExtra("label"));
         int typeProduct = intent.getIntExtra("typeProduct", 0);
         ParseHelper parseHelper = new ParseHelper();
-        ParseQuery<ParseObject> query = parseHelper.getProductQuery(typeProduct);
+        ParseQuery<ParseObject> query = parseHelper.getProductQuery(typeProduct, NORMAL_PRODUCT);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> list, ParseException e) {
                 if (e == null) {
-                    adpater = new ProductGridViewAdpater(getBaseContext(), R.layout.grid_item_layout, list);
+                    adpater = new ProductGridViewAdpater(ShowSpecificProduct.this, R.layout.grid_item_layout, list);
                     gridView = (GridView) findViewById(R.id.specificProduct);
                     gridView.setAdapter(adpater);
                 }

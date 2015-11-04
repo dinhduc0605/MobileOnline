@@ -6,10 +6,10 @@ import android.content.Context;
 /**
  * Created by nguyendinhduc on 10/28/15.
  */
-public class LoadingDialog {
+public class Loading {
     ProgressDialog dialog;
 
-    public LoadingDialog(Context context) {
+    public Loading(Context context) {
         dialog = new ProgressDialog(context);
         dialog.setMessage("Loading....");
         dialog.setCancelable(false);

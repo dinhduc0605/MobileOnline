@@ -27,19 +27,15 @@ public class CategoriesTabAdapter extends FragmentStatePagerAdapter {
         Fragment fragment = new Fragment();
         switch (position) {
             case 0:
-                Log.w("test", position + "");
                 fragment = new AllTabFragment();
                 break;
             case 1:
-                Log.w("test", position + "");
                 fragment = new BestSellerTabFragment();
                 break;
             case 2:
-                Log.w("test", position + "");
                 fragment = new SaleOffTabFragment();
                 break;
             case 3:
-                Log.w("test", position + "");
                 fragment = new OldProductTabFragment();
                 break;
         }

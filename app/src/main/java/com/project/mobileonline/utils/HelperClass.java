@@ -11,6 +11,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by Nguyen Dinh Duc on 9/16/2015.
@@ -38,5 +41,10 @@ public class HelperClass {
             e.printStackTrace();
         }
         return "";
+    }
+
+    public static String changeDateFormat(Date date) {
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+        return format.format(date);
     }
 }

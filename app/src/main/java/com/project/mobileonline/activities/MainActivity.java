@@ -27,6 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.parse.GetCallback;
 import com.parse.LogOutCallback;
 import com.parse.ParseException;
@@ -52,6 +54,7 @@ import static com.project.mobileonline.models.Constants.PRODUCT_TABLE;
 import static com.project.mobileonline.models.Constants.USERNAME;
 
 public class MainActivity extends AppCompatActivity {
+    public static ArrayList<ParseObject> carts = new ArrayList<>();
     public static final String TAG = "MainActivity";
     ActionBar actionBar;
     DrawerLayout drawerLayout;
@@ -120,17 +123,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void signOut() {
-        removeHeaderView();
-        adapter.clear();
-        login = false;
-        initData();
-        adapter.notifyDataSetChanged();
+
         ParseUser.logOutInBackground(new LogOutCallback() {
             @Override
             public void done(ParseException e) {
                 if (e != null) {
                     Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 } else {
+                    removeHeaderView();
+                    adapter.clear();
+                    login = false;
+                    initData();
+                    adapter.notifyDataSetChanged();
                     Toast.makeText(getBaseContext(), "signed out", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -160,6 +164,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
+                .threadPoolSize(15)
+                .build();
+        ImageLoader.getInstance().init(config);
+
         SystemBarTintManager manager = new SystemBarTintManager(this);
         manager.setStatusBarTintEnabled(true);
         manager.setTintResource(R.color.primary_color);
@@ -179,14 +188,12 @@ public class MainActivity extends AppCompatActivity {
             public void onDrawerClosed(View view) {
                 super.onDrawerClosed(view);
                 actionBar.setTitle(mTitle);
-                fab.setVisibility(View.VISIBLE);
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
                 super.onDrawerOpened(drawerView);
                 actionBar.setTitle(mDrawerTitle);
-                fab.setVisibility(View.INVISIBLE);
             }
         };
 

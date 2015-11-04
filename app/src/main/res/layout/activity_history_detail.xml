@@ -4,17 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.project.mobileonline.activities.HistoryDetailActivity">
+    tools:context="com.project.mobileonline.activities.HistoryOrderActivity">
 
-    <ListView
-        android:id="@+id/listProductHistory"
+    <GridView
+        android:layout_marginTop="?attr/actionBarSize"
+        android:id="@+id/orderedProductList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?attr/actionBarSize"
-        android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin">
+        android:numColumns="3"
+        android:stretchMode="columnWidth" />
 
-    </ListView>
 
     <include layout="@layout/toolbar" />
 </RelativeLayout>

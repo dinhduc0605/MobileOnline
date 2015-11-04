@@ -13,7 +13,7 @@ import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.project.mobileonline.R;
-import com.project.mobileonline.utils.LoadingDialog;
+import com.project.mobileonline.utils.Loading;
 
 import static com.project.mobileonline.activities.LoadingActivity.login;
 
@@ -38,7 +38,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void signIn(View view) {
-        final LoadingDialog loadingDialog = new LoadingDialog(this);
+        final Loading loadingDialog = new Loading(this);
         loadingDialog.show();
 
         ParseUser.logInInBackground(usernameEdit.getText().toString(), passwordEdit.getText().toString(), new LogInCallback() {

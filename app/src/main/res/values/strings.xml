@@ -74,4 +74,9 @@ Sản phẩm tham gia giao dịch trên Sàn giao dịch thương mại điện 
     </string-array>
 
     <string name="google_map_key">AIzaSyBwJNtKa4OjhWsqM46m0WIoIlFkni1wnS8</string>
+    <string name="done">Done</string>
+    <string name="progress">Progress</string>
+    <string name="abort">Abort</string>
+    <string name="quantity">Quantity: </string>
+
 </resources>

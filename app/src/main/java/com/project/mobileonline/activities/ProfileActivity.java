@@ -9,13 +9,17 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.SaveCallback;
 import com.project.mobileonline.R;
 import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.utils.HelperClass;
@@ -81,7 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
         address.setText(currentUser.getString(ADDRESS));
         firstName.setText(currentUser.getString(FIRSTNAME));
         lastName.setText(currentUser.getString(LASTNAME));
-//        birthday.setText(currentUser.getDate(BIRTHDAY).toString());
+//        birthday.setText(HelperClass.changeDateFormat(currentUser.getDate(BIRTHDAY)));
         gender.setText(currentUser.getBoolean(GENDER) ? "Male" : "Female");
     }
 
@@ -142,6 +146,23 @@ public class ProfileActivity extends AppCompatActivity {
                 if (enable) {
                     enable = false;
                     item.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_mode_edit_white_24dp));
+                    currentUser.put(EMAIL, email.getText().toString());
+                    currentUser.put(PHONE, phone.getText().toString());
+                    currentUser.put(ADDRESS, address.getText().toString());
+                    currentUser.put(FIRSTNAME, firstName.getText().toString());
+                    currentUser.put(LASTNAME, lastName.getText().toString());
+//                    currentUser.put(BIRTHDAY, birthday.getText());
+                    currentUser.put(GENDER, gender.getText().toString().equals("Male"));
+                    currentUser.saveInBackground(new SaveCallback() {
+                        @Override
+                        public void done(ParseException e) {
+                            if (e == null) {
+                                Toast.makeText(getBaseContext(), "Profile updated", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
 
                 } else {
                     enable = true;

@@ -12,14 +12,14 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="2dp">
 
             <ImageView
                 android:id="@+id/productImage"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/l" />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/productName"
@@ -33,15 +33,15 @@
                 style="?android:ratingBarStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/productName"
-                android:rating="3.5" />
+                android:layout_below="@+id/productName" />
 
             <TextView
                 android:id="@+id/productPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ratingBarGridItem"
-                android:padding="2dp" />
+                android:padding="2dp"
+                android:textColor="@color/accent_color" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 

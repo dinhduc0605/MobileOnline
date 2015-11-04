@@ -60,12 +60,15 @@
         android:orientation="horizontal">
 
         <RadioButton
+            android:id="@+id/ship"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:checked="true"
             android:text="Ship to house" />
 
         <RadioButton
+            android:id="@+id/store"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
