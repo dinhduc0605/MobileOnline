@@ -1,178 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewSwitcher"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="none">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <include layout="@layout/first_child_switcher" />
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="?android:actionBarSize">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/view_pager"
-                android:layout_width="match_parent"
-                android:layout_height="200dp" />
-
-            <com.viewpagerindicator.CirclePageIndicator
-                android:id="@+id/indicator"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="10dp"
-                android:gravity="right"
-                android:padding="5dp"
-                app:fillColor="@color/indicator"
-                app:radius="4dp" />
-        </RelativeLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/activity_horizontal_margin">
+            android:paddingTop="?android:actionBarSize">
+
+            <RelativeLayout
+                android:id="@+id/bannerSlideLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:padding="5dp"
+                    app:fillColor="@color/indicator"
+                    app:radius="4dp" />
+            </RelativeLayout>
 
             <LinearLayout
+                android:id="@+id/productLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical">
+                android:layout_below="@id/bannerSlideLayout"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin">
 
-                <TextView
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/recentProduct"
-                    android:textSize="@dimen/header_text_size" />
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/recentProduct"
+                        android:textSize="@dimen/header_text_size" />
 
-                    <Button
-                        android:id="@+id/recentButton"
-                        style="@style/ButtonStyle"
-                        android:text="@string/more" />
-                </android.support.v7.widget.CardView>
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/recentButton"
+                            style="@style/ButtonStyle"
+                            android:text="@string/more" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/recentProductGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth">
+
+                </GridView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/highProduct"
+                        android:textSize="@dimen/header_text_size" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/highButton"
+                            style="@style/ButtonStyle"
+                            android:text="@string/more" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/highProductGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth">
+
+                </GridView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/mediumProduct"
+                        android:textSize="@dimen/header_text_size" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/mediumButton"
+                            style="@style/ButtonStyle"
+                            android:text="@string/more" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/mediumProductGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth">
+
+                </GridView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/lowProduct"
+                        android:textSize="@dimen/header_text_size" />
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/lowButton"
+                            style="@style/ButtonStyle"
+                            android:text="@string/more" />
+                    </android.support.v7.widget.CardView>
+                </LinearLayout>
+
+                <GridView
+                    android:id="@+id/lowProductGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth">
+
+                </GridView>
             </LinearLayout>
 
-            <GridView
-                android:id="@+id/recentProductGrid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:numColumns="3"
-                android:stretchMode="columnWidth">
-
-            </GridView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/highProduct"
-                    android:textSize="@dimen/header_text_size" />
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:id="@+id/highButton"
-                        style="@style/ButtonStyle"
-                        android:text="@string/more" />
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-
-            <GridView
-                android:id="@+id/highProductGrid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:numColumns="3"
-                android:stretchMode="columnWidth">
-
-            </GridView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/mediumProduct"
-                    android:textSize="@dimen/header_text_size" />
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:id="@+id/mediumButton"
-                        style="@style/ButtonStyle"
-                        android:text="@string/more" />
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-
-            <GridView
-                android:id="@+id/mediumProductGrid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:numColumns="3"
-                android:stretchMode="columnWidth">
-
-            </GridView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/lowProduct"
-                    android:textSize="@dimen/header_text_size" />
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-                    <Button
-                        android:id="@+id/lowButton"
-                        style="@style/ButtonStyle"
-                        android:text="@string/more" />
-                </android.support.v7.widget.CardView>
-            </LinearLayout>
-
-            <GridView
-                android:id="@+id/lowProductGrid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:numColumns="3"
-                android:stretchMode="columnWidth">
-
-            </GridView>
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+        </RelativeLayout>
+    </ScrollView>
+</ViewSwitcher>

@@ -4,101 +4,61 @@
     <shared>
       <config />
     </shared>
+    <layouts>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_global.xml">
+        <config>
+          <theme>@android:style/Theme.Material.Light</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
+        <config>
+          <theme>@android:style/Theme.Material.Light</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_profile.xml">
+        <config>
+          <theme>@android:style/Theme.Material.Light</theme>
+        </config>
+      </layout>
+      <layout url="file://$PROJECT_DIR$/app/src/main/res/menu/menu_search.xml">
+        <config>
+          <theme>@android:style/Theme.Material.Light</theme>
+        </config>
+      </layout>
+    </layouts>
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2290f75e-7831-4446-9d9f-cc44b7eb7b6c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/abort.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/done.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/progress.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryOrderAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/PreviewFullSizeActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_preview_full_size.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_order_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/preview_small_slide_item.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/slide_image_item.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryOrderActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/PreviewProductAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/PreviewSmallSizeAdapter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/LoadingDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/Loading.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_manufacture_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_tab.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/CirclePageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/CirclePageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/CirclePageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/CirclePageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/CirclePageIndicator$SavedState$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/CirclePageIndicator$SavedState$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/CirclePageIndicator$SavedState$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/CirclePageIndicator$SavedState$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/CirclePageIndicator$SavedState.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/CirclePageIndicator$SavedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/CirclePageIndicator$SavedState.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/CirclePageIndicator$SavedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/CirclePageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/CirclePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/CirclePageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/CirclePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/IconPageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/IconPageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/IconPageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/IconPageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/IconPageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/IconPageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/IconPageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/IconPageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/IcsLinearLayout.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/IcsLinearLayout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/IcsLinearLayout.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/IcsLinearLayout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/LinePageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/LinePageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/LinePageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/LinePageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/LinePageIndicator$SavedState$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/LinePageIndicator$SavedState$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/LinePageIndicator$SavedState$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/LinePageIndicator$SavedState$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/LinePageIndicator$SavedState.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/LinePageIndicator$SavedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/LinePageIndicator$SavedState.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/LinePageIndicator$SavedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/LinePageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/LinePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/LinePageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/LinePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/androidTest/debug/com/viewpagerindicator/R.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/androidTest/debug/com/viewpagerindicator/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/androidTest/debug/com/viewpagerindicator/test/R.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/androidTest/debug/com/viewpagerindicator/test/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/R.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/R.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/R.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TabPageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TabPageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TabPageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TabPageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TabPageIndicator$2.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TabPageIndicator$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TabPageIndicator$2.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TabPageIndicator$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TabPageIndicator$TabView.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TabPageIndicator$TabView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TabPageIndicator$TabView.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TabPageIndicator$TabView.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TabPageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TabPageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TabPageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TabPageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$IndicatorStyle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$LinePosition.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$LinePosition.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$LinePosition.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$LinePosition.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$SavedState$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$SavedState$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$SavedState$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$SavedState$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$SavedState.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator$SavedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$SavedState.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator$SavedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/TitlePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/TitlePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator$2.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator$2.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator$SavedState$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator$SavedState$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator$SavedState$1.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator$SavedState$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator$SavedState.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator$SavedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator$SavedState.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator$SavedState.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/debug/com/viewpagerindicator/UnderlinePageIndicator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator.class" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/classes/release/com/viewpagerindicator/UnderlinePageIndicator.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/blue_cart.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/CartAdapter.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/first_child_switcher.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cart_layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/library_1_2_0.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/l.jpg" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryOrderActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryDetailActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductGridViewAdpater.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductGridViewAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/bundles/debug/classes.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/bundles/release/classes.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/intermediates/res/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.4/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/outputs/aar/viewPagerIndicatorLibrary-debug.aar" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/outputs/aar/viewPagerIndicatorLibrary-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/outputs/aar/viewPagerIndicatorLibrary-release.aar" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/outputs/aar/viewPagerIndicatorLibrary-release.aar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/AllTabFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/AllTabFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/BestSellerTabFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/BestSellerTabFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/CartActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/CartActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/CategoriesFrament.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/CategoriesFrament.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/CategoriesTabAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/CategoriesTabAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/CheckInternet.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/CheckInternet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/models/Constants.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/models/Constants.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/HelperClass.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/HelperClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/HistoryFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/HistoryFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryListAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryOrderAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryOrderAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/LoadingActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/LoadingActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/tmp/packageDebugJar/MANIFEST.MF" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/tmp/packageDebugJar/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/tmp/packageReleaseJar/MANIFEST.MF" afterPath="$PROJECT_DIR$/viewPagerIndicatorLibrary/build/tmp/packageReleaseJar/MANIFEST.MF" />
@@ -109,34 +69,41 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/NewsListAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/NewsListAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/OldProductTabFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/OldProductTabFragment.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/ParseHelper.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/ParseHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/PreviewFullSizeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/PreviewFullSizeActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProductDetailActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProductDetailActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductGridViewAdpater.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductGridViewAdpater.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductListViewAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductListViewAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProfileActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProfileActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/SaleOffTabFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/SaleOffTabFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SearchActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SearchActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ShowSpecificProduct.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ShowSpecificProduct.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignInActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignInActivity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignUpActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignUpActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/SlideAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/SlideAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/StoreFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/StoreFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_history_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_history_detail.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_loading.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_loading.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_news_content.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_news_content.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_specific_product.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_specific_product.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/custom_rating_bar.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/custom_rating_bar.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_tab.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_best_seller_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_best_seller_tab.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_categories.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_categories.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_news_history.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_news_history.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_old_product_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_old_product_tab.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sale_off_tab.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_sale_off_tab.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/grid_item_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/grid_item_layout.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/history_order_item.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/history_order_item.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_history_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_history_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_news_layout.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_news_layout.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/list_item_product_categories.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/list_item_product_categories.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_global.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_global.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/oder_dialog.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/oder_dialog.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -168,87 +135,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/models/Constants.java">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
+            <state vertical-scroll-proportion="-0.38917977">
+              <caret line="122" column="39" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/CartActivity.java">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.40314135">
-              <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
-                <element signature="e#3528#6869#0" expanded="true" />
-                <element signature="e#4896#6529#0" expanded="true" />
-                <element signature="e#5714#6445#0" expanded="true" />
-                <element signature="e#6444#6445#0" expanded="true" />
-                <element signature="e#6528#6529#0" expanded="true" />
-                <element signature="e#6584#6811#0" expanded="true" />
-                <element signature="e#6810#6811#0" expanded="true" />
-                <element signature="e#6868#6869#0" expanded="true" />
+                <element signature="e#715#733#0" expanded="true" />
+                <element signature="e#879#918#0" expanded="true" />
+                <element signature="e#1025#1049#0" expanded="true" />
+                <element signature="e#1150#1168#0" expanded="true" />
+                <element signature="e#1494#1511#0" expanded="true" />
+                <element signature="e#1759#1790#0" expanded="true" />
+                <element signature="e#1910#1940#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HistoryOrderActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryOrderActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HistoryFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/HistoryFragment.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="66" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
-              <folding>
-                <element signature="e#1392#1685#0" expanded="true" />
-                <element signature="e#1684#1685#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParseHelper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/ParseHelper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="oder_dialog.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/oder_dialog.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.821428">
-              <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductDetailActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProductDetailActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="128" column="67" selection-start-line="128" selection-start-column="67" selection-end-line="128" selection-end-column="67" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -736,6 +646,11 @@
                 <option name="description" value="Prepare com.android.support:support-v4:23.1.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportSupportV42310Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.daimajia.swipelayout:library:1.2.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComDaimajiaSwipelayoutLibrary120Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.google.android.gms:play-services-base:8.1.0" />
@@ -1381,6 +1296,11 @@
                 <option name="description" value="Prepare com.android.support:support-v4:23.1.0" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComAndroidSupportSupportV42310Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.daimajia.swipelayout:library:1.2.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComDaimajiaSwipelayoutLibrary120Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Prepare com.google.android.gms:play-services-base:8.1.0" />
@@ -2100,7 +2020,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="5778916447181" />
+        <entry key="$PROJECT_DIR$" value="5779619412792" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2286,6 +2206,7 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.readystatesoftware.systembartint/systembartint/1.0.3/de4f7404e2f58d8f6e83cb1e85d0c2d6c2987287/systembartint-1.0.3.jar" />
                             <option value="$USER_HOME$/Study/AndroidSdk/extras/android/m2repository/com/android/support/design/23.1.0/design-23.1.0.aar" />
                             <option value="$USER_HOME$/Study/AndroidSdk/extras/google/m2repository/com/google/android/gms/play-services-maps/8.1.0/play-services-maps-8.1.0.aar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.daimajia.swipelayout/library/1.2.0/44b3b8b1f9625bf4a697ab2b32a95da20ee7ddea/library-1.2.0.aar" />
                             <option value="$USER_HOME$/Study/AndroidSdk/extras/android/m2repository/com/android/support/support-v4/23.1.0/support-v4-23.1.0.aar" />
                             <option value="$USER_HOME$/Study/AndroidSdk/extras/android/m2repository/com/android/support/recyclerview-v7/23.1.0/recyclerview-v7-23.1.0.aar" />
                             <option value="$USER_HOME$/Study/AndroidSdk/extras/google/m2repository/com/google/android/gms/play-services-base/8.1.0/play-services-base-8.1.0.aar" />
@@ -2519,57 +2440,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/LoadingDialogFactory.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignUpActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignInActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/LoadingDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/application/MyApplication.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_categories.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/CategoriesFrament.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/PreviewFullSizeAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/slide_image_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/CategoriesTabAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ShowSpecificProduct.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/SaleOffTabFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/OldProductTabFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/BestSellerTabFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_news_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/HelperClass.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProfileActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_history_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_history_detail.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/GetDataTask.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/ParseHelper.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryDetailActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/AllTabFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_news_content.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/NewsListAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/NewsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/HistoryFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/NewsContentActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductListViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/application/MyApplication.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/item_cart_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-v21/dimens.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/grid_item_layout.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryOrderActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/history_order_item.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryOrderAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductGridViewAdpater.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/preview_small_slide_item.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/SlideAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/StoreFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/PreviewSmallSizeAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_preview_full_size.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_cart.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryOrderActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/PreviewFullSizeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/CartActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/CartAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/models/Constants.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductGridViewAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SearchActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/NewsListAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/first_child_switcher.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_all_tab.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/AllTabFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/BestSellerTabFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/SaleOffTabFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_best_seller_tab.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_sale_off_tab.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProductDetailActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductListViewAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_product_categories.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/oder_dialog.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/models/Constants.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/CartActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_news_history.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/NewsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/HistoryFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ShowSpecificProduct.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryDetailActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_show_specific_product.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_history_detail.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/list_item_history_layout.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/OldProductTabFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_old_product_tab.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/LoadingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/CheckInternet.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_global.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignInActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/StoreFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2612,6 +2533,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -2619,10 +2542,6 @@
               <option name="myItemId" value="MobileOnline" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2631,20 +2550,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="viewPagerIndicatorLibrary" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2766,67 +2671,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable-mdpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
+              <option name="myItemId" value="menu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2893,10 +2738,6 @@
               <option name="myItemId" value="mobileonline" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2929,40 +2770,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="fragments" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mobileonline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3052,27 +2859,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MobileOnline" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3093,14 +2881,13 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
-    <property name="android.project.structure.last.selected" value="MobileOnline" />
+    <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Wallpapers Beauty" />
     <property name="recentsLimit" value="5" />
@@ -3113,6 +2900,7 @@
       <recent name="com.project.mobileonline.activities" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/values-v21" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable-hdpi" />
     </key>
   </component>
@@ -3264,7 +3052,7 @@
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="USE_COMMAND_LINE" value="true" />
       <option name="COMMAND_LINE" value="" />
@@ -3320,7 +3108,13 @@
       <option name="project" value="LOCAL" />
       <updated>1446292775953</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1446652520864</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1446652520864</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3334,7 +3128,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41333333" sideWeight="0.5030211" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41333333" sideWeight="0.49697885" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56666666" sideWeight="0.49697885" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.26359516" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943144" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32833335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3343,6 +3137,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27719033" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.49331105" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.50668895" order="6" side_tool="true" content_ui="tabs" />
@@ -3354,7 +3149,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -3374,199 +3168,87 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/Study/AndroidSdk/extras/android/m2repository/com/android/support/support-v4/23.1.0/support-v4-23.1.0-sources.jar!/android/support/v4/app/Fragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40151516">
-          <caret line="625" column="67" selection-start-line="625" selection-start-column="67" selection-end-line="625" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/SaleOffTabFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55497384">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/OldProductTabFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52879584">
-          <caret line="55" column="61" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/BestSellerTabFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65445024">
-          <caret line="61" column="20" selection-start-line="61" selection-start-column="20" selection-end-line="61" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_news_history.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.714286">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_news_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19816513">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Study/AndroidSdk/sources/android-23/android/app/Instrumentation.java">
+    <entry file="file://$USER_HOME$/Study/AndroidSdk/sources/android-23/android/os/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
-          <caret line="157" column="0" selection-start-line="157" selection-start-column="0" selection-end-line="157" selection-end-column="0" />
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/HelperClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71727747">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProfileActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/CartAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="176" column="26" selection-start-line="176" selection-start-column="26" selection-end-line="176" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_history_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4293578">
-          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
           <folding>
-            <element signature="e#1025#1060#0" expanded="true" />
-            <element signature="e#1709#1727#0" expanded="true" />
+            <element signature="e#4598#4955#0" expanded="true" />
+            <element signature="e#4954#4955#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/done.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_history_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.428571">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_all_tab.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26422018">
-          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryListAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryOrderAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="82" column="61" selection-start-line="82" selection-start-column="61" selection-end-line="82" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/LoadingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22153845">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignInActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="117" />
+          <caret line="91" column="27" selection-start-line="91" selection-start-column="27" selection-end-line="91" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/toolbar.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.4293578">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
           <folding />
         </state>
       </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/NewsFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/models/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="13" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/NewsListAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductGridViewAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37172773">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34917733">
+          <caret line="49" column="43" selection-start-line="49" selection-start-column="43" selection-end-line="49" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_search.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29908258">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SearchActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_news_content.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.821428">
-          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/preview_product_item_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19816513">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
+          <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -3574,280 +3256,404 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/NewsContentActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="39" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/grid_item_layout.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/NewsListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4385321">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/history_order_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13211009">
-          <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryOrderAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43455496">
-          <caret line="73" column="64" selection-start-line="73" selection-start-column="64" selection-end-line="73" selection-end-column="64" />
-          <folding>
-            <element signature="e#3670#3915#0" expanded="false" />
-            <element signature="e#3914#3915#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/app/libs/Parse-1.10.2.jar!/com/parse/ParseObject.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_about.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/preview_small_slide_item.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32142857">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/SlideAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7102967">
-          <caret line="51" column="57" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_preview_full_size.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.071429">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.821429">
-          <caret line="22" column="12" selection-start-line="22" selection-start-column="12" selection-end-line="31" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/StoreFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/PreviewFullSizeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="43" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="43" />
-          <folding>
-            <element signature="e#1457#2122#0" expanded="true" />
-            <element signature="e#2121#2122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="android-dummy:///media/nguyendinhduc/Study/Informatics/Android/AndroidstudioProjects/MobileOnline/app/Translations Editor">
-      <provider selected="true" editor-type-id="string-resource-editor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8115183">
-          <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4972477">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_cart.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductGridViewAdpater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="16" selection-start-line="71" selection-start-column="16" selection-end-line="72" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/PreviewSmallSizeAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="67" selection-start-line="56" selection-start-column="67" selection-end-line="56" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/ProductListViewAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="91" column="85" selection-start-line="91" selection-start-column="85" selection-end-line="91" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4032#5411#0" expanded="true" />
-            <element signature="e#5410#5411#0" expanded="true" />
-            <element signature="e#5466#5862#0" expanded="true" />
-            <element signature="e#5861#5862#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_product_categories.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36330274">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/AllTabFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5968586">
-          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/oder_dialog.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.821428">
-          <caret line="47" column="8" selection-start-line="47" selection-start-column="8" selection-end-line="47" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/models/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProductDetailActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="128" column="67" selection-start-line="128" selection-start-column="67" selection-end-line="128" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/HistoryFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="66" selection-start-line="44" selection-start-column="66" selection-end-line="44" selection-end-column="66" />
-          <folding>
-            <element signature="e#1392#1685#0" expanded="true" />
-            <element signature="e#1684#1685#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/ParseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryOrderActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="50" column="65" selection-start-line="50" selection-start-column="65" selection-end-line="50" selection-end-column="65" />
+        <state vertical-scroll-proportion="-0.02443281">
+          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/CartActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40314135">
-          <caret line="102" column="64" selection-start-line="102" selection-start-column="64" selection-end-line="102" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.591623">
+          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/CategoriesFrament.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15183246">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/first_child_switcher.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.857143">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_store.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46238533">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <element signature="e#3528#6869#0" expanded="true" />
-            <element signature="e#4896#6529#0" expanded="true" />
-            <element signature="e#5714#6445#0" expanded="true" />
-            <element signature="e#6444#6445#0" expanded="true" />
-            <element signature="e#6528#6529#0" expanded="true" />
-            <element signature="e#6584#6811#0" expanded="true" />
-            <element signature="e#6810#6811#0" expanded="true" />
-            <element signature="e#6868#6869#0" expanded="true" />
+            <element signature="e#2085#2120#0" expanded="true" />
+            <element signature="e#2603#2626#0" expanded="true" />
+            <element signature="e#2668#2693#0" expanded="true" />
+            <element signature="e#3064#3078#0" expanded="true" />
+            <element signature="e#4027#4048#0" expanded="true" />
+            <element signature="e#4090#4115#0" expanded="true" />
+            <element signature="e#4484#4498#0" expanded="true" />
+            <element signature="e#5445#5468#0" expanded="true" />
+            <element signature="e#5510#5535#0" expanded="true" />
+            <element signature="e#5906#5920#0" expanded="true" />
+            <element signature="e#6869#6889#0" expanded="true" />
+            <element signature="e#6931#6956#0" expanded="true" />
+            <element signature="e#7324#7338#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_all_tab.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36330274">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/AllTabFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="65" column="3" selection-start-line="65" selection-start-column="3" selection-end-line="65" selection-end-column="3" />
+          <folding>
+            <element signature="e#2008#2507#0" expanded="false" />
+            <element signature="e#2506#2507#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/BestSellerTabFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="59" column="44" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="44" />
+          <folding>
+            <element signature="e#1612#2350#0" expanded="false" />
+            <element signature="e#2349#2350#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/SaleOffTabFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8167539">
+          <caret line="57" column="44" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
+          <folding>
+            <element signature="e#1682#2154#0" expanded="false" />
+            <element signature="e#2153#2154#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_sale_off_tab.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09908257">
+          <caret line="3" column="39" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_best_seller_tab.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52844036">
+          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ProductDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44677138">
+          <caret line="119" column="68" selection-start-line="119" selection-start-column="68" selection-end-line="119" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_product_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47155964">
+          <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
+          <folding>
+            <element signature="e#968#2539#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/adapters/HistoryListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.565445">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/HistoryFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62827224">
+          <caret line="51" column="44" selection-start-line="51" selection-start-column="44" selection-end-line="51" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/HistoryDetailActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19720767">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/ShowSpecificProduct.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21989529">
+          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/NewsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65445024">
+          <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_show_specific_product.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4293578">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#274#307#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_history_detail.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.759633">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_news_history.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.357142">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_news_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26422018">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_old_product_tab.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.214286">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/progress.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/header_view_background.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31413612">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/list_item_history_layout.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.571428">
+          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/Loading.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5968586">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/OldProductTabFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="68" selection-start-line="49" selection-start-column="68" selection-end-line="49" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/CheckInternet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#963#1150#0" expanded="true" />
+            <element signature="e#1149#1150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_global.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_main.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_search.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34554973">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/LoadingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/HelperClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/utils/ParseHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="36" column="41" selection-start-line="36" selection-start-column="41" selection-end-line="36" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/fragments/StoreFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.7643979">
+          <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/SignInActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="e#715#733#0" expanded="true" />
+            <element signature="e#879#918#0" expanded="true" />
+            <element signature="e#1025#1049#0" expanded="true" />
+            <element signature="e#1150#1168#0" expanded="true" />
+            <element signature="e#1494#1511#0" expanded="true" />
+            <element signature="e#1759#1790#0" expanded="true" />
+            <element signature="e#1910#1940#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/project/mobileonline/activities/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.38917977">
+          <caret line="122" column="39" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

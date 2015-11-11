@@ -16,7 +16,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,13 +26,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikhaellopez.circularimageview.CircularImageView;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
-import com.parse.GetCallback;
 import com.parse.LogOutCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.DrawerAdapter;
@@ -48,9 +43,6 @@ import com.readystatesoftware.systembartint.SystemBarTintManager;
 import java.io.File;
 import java.util.ArrayList;
 
-import static com.project.mobileonline.activities.LoadingActivity.login;
-import static com.project.mobileonline.models.Constants.PRODUCT_NAME;
-import static com.project.mobileonline.models.Constants.PRODUCT_TABLE;
 import static com.project.mobileonline.models.Constants.USERNAME;
 
 public class MainActivity extends AppCompatActivity {
@@ -100,7 +92,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        if (login) {
+        currentUser = ParseUser.getCurrentUser();
+        if (currentUser != null) {
+            File dir = new File(Constants.DIRECTORY_PATH + currentUser.getString("username"));
+            if (!dir.exists()) {
+                dir.mkdirs();
+            }
+
             titles = getResources().getStringArray(R.array.user_menu);
             iconRes = userIconRes;
         } else {
@@ -112,14 +110,6 @@ public class MainActivity extends AppCompatActivity {
             DrawerItem item = new DrawerItem(iconRes[i], titles[i]);
             items.add(item);
         }
-
-        if (login) {
-            currentUser = ParseUser.getCurrentUser();
-            File dir = new File(Constants.DIRECTORY_PATH + currentUser.getString("username"));
-            if (!dir.exists()) {
-                dir.mkdirs();
-            }
-        }
     }
 
     private void signOut() {
@@ -128,17 +118,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void done(ParseException e) {
                 if (e != null) {
-                    Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getBaseContext(), e.getMessage() , Toast.LENGTH_SHORT).show();
                 } else {
                     removeHeaderView();
                     adapter.clear();
-                    login = false;
                     initData();
                     adapter.notifyDataSetChanged();
                     Toast.makeText(getBaseContext(), "signed out", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+        ParseUser.logOut();
+
     }
 
     private void addHeaderView() {
@@ -164,10 +155,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this)
-                .threadPoolSize(15)
-                .build();
-        ImageLoader.getInstance().init(config);
+
 
         SystemBarTintManager manager = new SystemBarTintManager(this);
         manager.setStatusBarTintEnabled(true);
@@ -180,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         drawerMenu = (ListView) findViewById(R.id.drawer_menu);
         adapter = new DrawerAdapter(this, R.layout.drawer_item_layout, items);
         drawerMenu.setAdapter(adapter);
-        if (login) {
+        if (currentUser != null) {
             addHeaderView();
         }
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.drawer_open, R.string.drawer_close) {
@@ -224,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
     //item_array_position = list_item_position -1
     private void selectItem(int position) {
         Fragment fragment = new Fragment();
-        if (login) {
+        if (currentUser != null) {
             switch (position) {
                 case 0:
                     Intent intent = new Intent(this, ProfileActivity.class);

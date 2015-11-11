@@ -4,16 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.project.mobileonline.activities.HistoryOrderActivity">
+    tools:context="com.project.mobileonline.activities.HistoryDetailActivity">
 
-    <GridView
-        android:layout_marginTop="?attr/actionBarSize"
-        android:id="@+id/orderedProductList"
+    <ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/viewSwitcher"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="3"
-        android:stretchMode="columnWidth" />
+        android:layout_height="match_parent">
 
+        <include layout="@layout/first_child_switcher" />
+
+        <GridView
+            android:id="@+id/orderedProductList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:numColumns="3"
+            android:stretchMode="columnWidth" />
+    </ViewSwitcher>
 
     <include layout="@layout/toolbar" />
+
 </RelativeLayout>

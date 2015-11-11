@@ -27,6 +27,11 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activities.ProfileActivity"
@@ -46,11 +51,7 @@
         <activity android:name=".activities.SignUpActivity" >
         </activity>
         <activity android:name=".activities.LoadingActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activities.NewsContentActivity" >
         </activity>
@@ -59,7 +60,7 @@
             android:label="Product Detail" >
         </activity>
         <activity
-            android:name=".activities.HistoryOrderActivity"
+            android:name=".activities.HistoryDetailActivity"
             android:label="Order Detail" >
         </activity>
         <activity android:name=".activities.ShowSpecificProduct" >

@@ -44,6 +44,9 @@ public class PreviewFullSizeActivity extends AppCompatActivity {
                     previewLargeSlide.setCurrentItem(getIntent().getIntExtra("position", 0));
                     circlePageIndicator.setViewPager(previewLargeSlide);
                 }
+                else {
+                    e.printStackTrace();
+                }
             }
         });
 

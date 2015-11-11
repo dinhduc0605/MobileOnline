@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Paint;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,6 @@ import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.parse.GetCallback;
-import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.project.mobileonline.R;
 import com.project.mobileonline.activities.ProductDetailActivity;
@@ -65,6 +64,7 @@ public class ProductListViewAdapter extends ArrayAdapter<ParseObject> {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
+//        Log.w(TAG, position + "");
         ViewHolder viewHolder = new ViewHolder();
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -84,25 +84,19 @@ public class ProductListViewAdapter extends ArrayAdapter<ParseObject> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         final ParseObject product = products.get(position);
-        final ViewHolder finalViewHolder = viewHolder;
-        product.fetchIfNeededInBackground(new GetCallback<ParseObject>() {
-            @Override
-            public void done(ParseObject parseObject, ParseException e) {
-                imageLoader.displayImage(parseObject.getString(PRODUCT_THUMBNAIL_IMAGE), finalViewHolder.thumbnailLv, options);
-                finalViewHolder.productNameLv.setText(parseObject.getString(PRODUCT_NAME));
-                finalViewHolder.manufactureLv.setText(parseObject.getString(PRODUCT_MANUFACTURE));
-                finalViewHolder.priceLv.setText(parseObject.getNumber(PRODUCT_PRICE).toString());
-                finalViewHolder.ratingBarLv.setRating(Float.parseFloat(parseObject.getString(NUMBER_STAR)));
-                finalViewHolder.quantity.setText(parseObject.getNumber(PRODUCT_QUANTITY).toString());
-                if (parseObject.getInt(PRODUCT_TYPE) == SALE_OFF_PRODUCT) {
-                    finalViewHolder.priceLv.setText(parseObject.getNumber(PRODUCT_SALE_PRICE).toString());
-                    finalViewHolder.otherPriceLv.setText(parseObject.getNumber(PRODUCT_PRICE).toString());
-                } else if (parseObject.getInt(PRODUCT_TYPE) == OLD_PRODUCT) {
-                    finalViewHolder.priceLv.setText(parseObject.getNumber(PRODUCT_OLD_PRICE).toString());
-                    finalViewHolder.otherPriceLv.setText(parseObject.getNumber(PRODUCT_PRICE).toString());
-                }
-            }
-        });
+        imageLoader.displayImage(product.getString(PRODUCT_THUMBNAIL_IMAGE), viewHolder.thumbnailLv, options);
+        viewHolder.productNameLv.setText(product.getString(PRODUCT_NAME));
+        viewHolder.manufactureLv.setText(product.getString(PRODUCT_MANUFACTURE));
+        viewHolder.priceLv.setText(product.getNumber(PRODUCT_PRICE).toString());
+        viewHolder.ratingBarLv.setRating(Float.parseFloat(product.getString(NUMBER_STAR)));
+        viewHolder.quantity.setText(product.getNumber(PRODUCT_QUANTITY).toString());
+        if (product.getInt(PRODUCT_TYPE) == SALE_OFF_PRODUCT) {
+            viewHolder.priceLv.setText(product.getNumber(PRODUCT_SALE_PRICE).toString());
+            viewHolder.otherPriceLv.setText(product.getNumber(PRODUCT_PRICE).toString());
+        } else if (product.getInt(PRODUCT_TYPE) == OLD_PRODUCT) {
+            viewHolder.priceLv.setText(product.getNumber(PRODUCT_OLD_PRICE).toString());
+            viewHolder.otherPriceLv.setText(product.getNumber(PRODUCT_PRICE).toString());
+        }
         viewHolder.productLvItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

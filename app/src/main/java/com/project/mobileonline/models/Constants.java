@@ -58,10 +58,11 @@ public class Constants {
     public static final String SMALL_SLIDE_IMAGE = "smallSlideImage";
     public static final String LARGE_SLIDE_IMAGE = "largeSlideImage";
     public static final String BACKGROUND_IMAGE = "backgroundImage";
+    public static final String PRODUCT_QUERY = "query";
 
     //bestseller table
     public static final String BESTSELLER_TABLE = "BestSeller";
-    public static final String PRODUCT_ID = "productId";
+    public static final String BESTSELLER_PRODUCT_ID = "productId";
     public static final String BESTSELLER_QUANTITY = "quantity";
 
     //news table
@@ -80,6 +81,7 @@ public class Constants {
     public static final String CURRENT_ORDER = "currentOder";
     public static final String ORDER_QUANTITY = "quantity";
     public static final String ORDER_TYPE = "type";
+    public static final String ORDER_CONTENT = "content";
     public static final int TYPE_SHIP = 1;
     public static final int TYPE_STORE = 2;
     public static final int STATUS_DONE = 1;
@@ -108,4 +110,10 @@ public class Constants {
     public static final String INTERNAL_STORAGE = "internalStorage";
     public static final String RAM = "ram";
 
+    //banner table
+    public static final String BANNER_TABLE = "Banner";
+    public static final String BANNER_URL = "imageUrl";
+
+    //Role
+    public static final String ROLE_GUEST = "Guest";
 }

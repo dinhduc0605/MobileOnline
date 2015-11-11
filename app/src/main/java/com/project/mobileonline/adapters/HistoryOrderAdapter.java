@@ -1,5 +1,6 @@
 package com.project.mobileonline.adapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
@@ -15,34 +16,33 @@ import android.widget.TextView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.project.mobileonline.R;
 import com.project.mobileonline.activities.ProductDetailActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.project.mobileonline.models.Constants.CART_PRODUCT_ID;
 import static com.project.mobileonline.models.Constants.NUMBER_STAR;
-import static com.project.mobileonline.models.Constants.OBJECT_ID;
 import static com.project.mobileonline.models.Constants.PRODUCT_NAME;
 import static com.project.mobileonline.models.Constants.PRODUCT_PRICE;
-import static com.project.mobileonline.models.Constants.PRODUCT_QUANTITY;
-import static com.project.mobileonline.models.Constants.PRODUCT_TABLE;
 import static com.project.mobileonline.models.Constants.PRODUCT_THUMBNAIL_IMAGE;
+import static com.project.mobileonline.models.Constants.SHIP_QUANTITY;
 
 /**
  * Created by Nguyen Dinh Duc on 9/21/2015.
  */
 public class HistoryOrderAdapter extends ArrayAdapter<ParseObject> {
+    public static final String TAG = "HistoryOrderAdapter";
     private final ImageLoader imageLoader;
     private final DisplayImageOptions options;
-    Context context;
+    Activity context;
     int layoutId;
     ArrayList<ParseObject> items;
 
     public HistoryOrderAdapter(Context context, int resource, List<ParseObject> objects) {
         super(context, resource, objects);
-        this.context = context;
+        this.context = (Activity) context;
         this.layoutId = resource;
         this.items = new ArrayList<>(objects);
         imageLoader = ImageLoader.getInstance();
@@ -69,21 +69,32 @@ public class HistoryOrderAdapter extends ArrayAdapter<ParseObject> {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        ParseObject item = items.get(position);
-        viewHolder.quantity.setText(item.getInt(PRODUCT_QUANTITY));
-        ParseQuery<ParseObject> query = new ParseQuery<ParseObject>(PRODUCT_TABLE);
-        imageLoader.displayImage(item.getString(PRODUCT_THUMBNAIL_IMAGE), viewHolder.productImage, options);
-        viewHolder.productName.setText(item.getString(PRODUCT_NAME));
-        viewHolder.ratingBar.setRating(Float.parseFloat(item.getString(NUMBER_STAR)));
-        viewHolder.price.setText(item.getNumber(PRODUCT_PRICE).toString());
-        viewHolder.gridViewItem.setOnClickListener(new View.OnClickListener() {
+        final ParseObject item = items.get(position);
+        final ParseObject product = item.getParseObject(CART_PRODUCT_ID);
+        final ViewHolder finalViewHolder = viewHolder;
+        Log.w(TAG, position + "");
+        finalViewHolder.quantity.setText(context.getString(R.string.quantity) + item.getNumber(SHIP_QUANTITY).toString());
+        imageLoader.displayImage(product.getString(PRODUCT_THUMBNAIL_IMAGE), finalViewHolder.productImage, options);
+        finalViewHolder.productName.setText(product.getString(PRODUCT_NAME));
+        finalViewHolder.ratingBar.setRating(Float.parseFloat(product.getString(NUMBER_STAR)));
+        finalViewHolder.price.setText(product.getNumber(PRODUCT_PRICE).toString());
+        finalViewHolder.gridViewItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, ProductDetailActivity.class);
+                intent.putExtra("productName", product.getString(PRODUCT_NAME));
+                intent.putExtra("productId", product.getObjectId());
                 context.startActivity(intent);
             }
         });
+
+
         return convertView;
+    }
+
+    @Override
+    public int getCount() {
+        return items.size();
     }
 
     class ViewHolder {

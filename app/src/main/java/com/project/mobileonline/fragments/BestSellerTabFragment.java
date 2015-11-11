@@ -9,6 +9,7 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ViewSwitcher;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -27,9 +28,8 @@ import java.util.List;
  */
 public class BestSellerTabFragment extends ListFragment {
     ProductListViewAdapter adapter;
-    ParseHelper parseHelper;
     Activity activity;
-
+    ViewSwitcher viewSwitcher;
     public BestSellerTabFragment() {
         // Required empty public constructor
     }
@@ -45,22 +45,30 @@ public class BestSellerTabFragment extends ListFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_best_seller_tab, container, false);
-        parseHelper = new ParseHelper();
-        ParseQuery<ParseObject> query = parseHelper.getBestsellerQuery();
+        viewSwitcher = (ViewSwitcher) view.findViewById(R.id.viewSwitcher);
+        ParseQuery<ParseObject> query = ParseHelper.getBestsellerQuery();
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> bestsellers, ParseException e) {
-                List<ParseObject> products = new ArrayList<>();
-                for (ParseObject parseObject : bestsellers) {
-                    products.add(parseObject.getParseObject(Constants.PRODUCT_ID));
+                if (e == null) {
+                    List<ParseObject> products = new ArrayList<>();
+                    for (ParseObject parseObject : bestsellers) {
+                        products.add(parseObject.getParseObject(Constants.BESTSELLER_PRODUCT_ID));
+                    }
+                    adapter = new ProductListViewAdapter(activity, R.layout.list_item_product_categories, products);
+                    setListAdapter(adapter);
+                    viewSwitcher.showNext();
+                } else {
+                    e.printStackTrace();
                 }
-                adapter = new ProductListViewAdapter(activity, R.layout.list_item_product_categories, products);
-                setListAdapter(adapter);
             }
         });
 
         return view;
     }
 
-
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+    }
 }

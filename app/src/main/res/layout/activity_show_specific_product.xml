@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:fitsSystemWindows="true"
     tools:context="com.project.mobileonline.activities.ShowSpecificProduct">
 
-    <GridView
-        android:id="@+id/specificProduct"
+    <ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/viewSwitcher"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="3"
-        android:paddingTop="?attr/actionBarSize"
-        android:stretchMode="columnWidth">
+        android:layout_height="match_parent">
 
-    </GridView>
+        <include layout="@layout/first_child_switcher" />
+
+        <GridView
+            android:id="@+id/specificProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:paddingTop="?attr/actionBarSize"
+            android:stretchMode="columnWidth">
+
+        </GridView>
+    </ViewSwitcher>
 
     <include layout="@layout/toolbar" />
 </RelativeLayout>

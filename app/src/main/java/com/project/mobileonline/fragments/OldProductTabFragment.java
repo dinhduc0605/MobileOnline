@@ -9,6 +9,7 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ViewSwitcher;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -16,15 +17,12 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.ProductListViewAdapter;
-import com.project.mobileonline.models.Product;
 import com.project.mobileonline.utils.ParseHelper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.project.mobileonline.models.Constants.NONE;
 import static com.project.mobileonline.models.Constants.OLD_PRODUCT;
-import static com.project.mobileonline.models.Constants.SALE_OFF_PRODUCT;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +30,7 @@ import static com.project.mobileonline.models.Constants.SALE_OFF_PRODUCT;
 public class OldProductTabFragment extends ListFragment {
     ProductListViewAdapter adapter;
     Activity activity;
+    ViewSwitcher viewSwitcher;
 
     public OldProductTabFragment() {
         // Required empty public constructor
@@ -48,13 +47,18 @@ public class OldProductTabFragment extends ListFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_old_product_tab, container, false);
-        ParseHelper parseHelper = new ParseHelper();
-        ParseQuery<ParseObject> query = parseHelper.getProductQuery(NONE, OLD_PRODUCT);
+        viewSwitcher = (ViewSwitcher) view.findViewById(R.id.viewSwitcher);
+        ParseQuery<ParseObject> query = ParseHelper.getProductQuery(NONE, OLD_PRODUCT);
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> list, ParseException e) {
-                adapter = new ProductListViewAdapter(activity, R.layout.list_item_product_categories, list);
-                setListAdapter(adapter);
+                if (e == null) {
+                    adapter = new ProductListViewAdapter(activity, R.layout.list_item_product_categories, list);
+                    setListAdapter(adapter);
+                    viewSwitcher.showNext();
+                } else {
+                    e.printStackTrace();
+                }
             }
         });
         return view;

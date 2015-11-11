@@ -45,7 +45,6 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void done(ParseUser parseUser, ParseException e) {
                 if (e == null) {
-                    login = true;
                     Intent intent = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(intent);
                     finish();

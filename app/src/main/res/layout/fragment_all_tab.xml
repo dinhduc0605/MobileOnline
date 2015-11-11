@@ -1,15 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ViewSwitcher xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/viewSwitcher"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.project.mobileonline.fragments.AllTabFragment">
+    android:layout_height="match_parent">
 
-    <GridView
-        android:id="@+id/allProductGrid"
+    <include layout="@layout/first_child_switcher" />
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:numColumns="3"
-        android:stretchMode="columnWidth">
+        android:layout_height="match_parent"
+        tools:context="com.project.mobileonline.fragments.AllTabFragment">
 
-    </GridView>
-</FrameLayout>
+        <GridView
+            android:id="@+id/allProductGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:stretchMode="columnWidth">
+
+        </GridView>
+    </FrameLayout>
+</ViewSwitcher>

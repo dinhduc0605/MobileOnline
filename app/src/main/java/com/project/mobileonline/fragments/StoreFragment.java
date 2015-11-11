@@ -1,8 +1,8 @@
 package com.project.mobileonline.fragments;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,22 +12,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ProgressBar;
+import android.widget.ViewSwitcher;
 
-import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.project.mobileonline.R;
 import com.project.mobileonline.activities.ShowSpecificProduct;
-import com.project.mobileonline.adapters.ProductGridViewAdpater;
+import com.project.mobileonline.adapters.ProductGridViewAdapter;
 import com.project.mobileonline.adapters.SlideAdapter;
-import com.project.mobileonline.models.Product;
 import com.project.mobileonline.utils.ParseHelper;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import static com.project.mobileonline.models.Constants.BANNER_URL;
 import static com.project.mobileonline.models.Constants.HIGH_PRODUCT;
 import static com.project.mobileonline.models.Constants.LOW_PRODUCT;
 import static com.project.mobileonline.models.Constants.MEDIUM_PRODUCT;
@@ -43,9 +43,15 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
     ViewPager slide;
     CirclePageIndicator indicator;
     GridView recentProductGrid, highProductGrid, mediumProductGrid, lowProductGrid;
-    ProductGridViewAdpater recentAdpater, highAdpater, mediumAdpater, lowAdpater;
-    ArrayList<Product> recentItems, highItems, mediumItems, lowItems;
+    ProductGridViewAdapter recentAdpater, highAdpater, mediumAdpater, lowAdpater;
     Button recentButton, highButton, mediumButton, lowButton;
+    ArrayList<ParseObject> listBanner = new ArrayList<>(),
+            listRecentProduct = new ArrayList<>(),
+            listHighProduct = new ArrayList<>(),
+            listMediumProduct = new ArrayList<>(),
+            listLowProduct = new ArrayList<>();
+    ProgressBar storeProgress;
+    ViewSwitcher viewSwitcher;
 
     @Override
     public void onAttach(Context context) {
@@ -74,80 +80,21 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initView(final View view) {
-
+        viewSwitcher = (ViewSwitcher) view.findViewById(R.id.viewSwitcher);
+        storeProgress = (ProgressBar) view.findViewById(R.id.storeProgress);
         slide = (ViewPager) view.findViewById(R.id.view_pager);
-        SlideAdapter adapter = new SlideAdapter(context, slideImages);
-        slide.setAdapter(adapter);
         indicator = (CirclePageIndicator) view.findViewById(R.id.indicator);
-        indicator.setViewPager(slide);
+        recentProductGrid = (GridView) view.findViewById(R.id.recentProductGrid);
+        highProductGrid = (GridView) view.findViewById(R.id.highProductGrid);
+        mediumProductGrid = (GridView) view.findViewById(R.id.mediumProductGrid);
+        lowProductGrid = (GridView) view.findViewById(R.id.lowProductGrid);
 
-        ParseHelper parseHelper = new ParseHelper();
-        //recent product
-
-        ParseQuery<ParseObject> recentQuery = parseHelper.getProductQuery(RECENT_PRODUCT, NORMAL_PRODUCT);
-        recentQuery.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> list, ParseException e) {
-                if (e == null) {
-                    recentProductGrid = (GridView) view.findViewById(R.id.recentProductGrid);
-                    recentAdpater = new ProductGridViewAdpater(context, R.layout.grid_item_layout, list);
-                    recentProductGrid.setAdapter(recentAdpater);
-                } else {
-                    e.printStackTrace();
-                }
-            }
-        });
         recentButton = (Button) view.findViewById(R.id.recentButton);
-
-        //high product
-        ParseQuery<ParseObject> highQuery = parseHelper.getProductQuery(HIGH_PRODUCT, NORMAL_PRODUCT);
-        highQuery.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> list, ParseException e) {
-                if (e == null) {
-                    highProductGrid = (GridView) view.findViewById(R.id.highProductGrid);
-                    highAdpater = new ProductGridViewAdpater(context, R.layout.grid_item_layout, list);
-                    highProductGrid.setAdapter(highAdpater);
-                } else {
-                    e.printStackTrace();
-                }
-            }
-        });
         highButton = (Button) view.findViewById(R.id.highButton);
-
-        //medium product
-        ParseQuery<ParseObject> mediumQuery = parseHelper.getProductQuery(MEDIUM_PRODUCT, NORMAL_PRODUCT);
-        mediumQuery.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> list, ParseException e) {
-                if (e == null) {
-                    mediumProductGrid = (GridView) view.findViewById(R.id.mediumProductGrid);
-
-                    mediumAdpater = new ProductGridViewAdpater(context, R.layout.grid_item_layout, list);
-                    mediumProductGrid.setAdapter(mediumAdpater);
-                } else {
-                    e.printStackTrace();
-                }
-            }
-        });
         mediumButton = (Button) view.findViewById(R.id.mediumButton);
-
-        //low product
-        ParseQuery<ParseObject> lowQuery = parseHelper.getProductQuery(LOW_PRODUCT, NORMAL_PRODUCT);
-        lowQuery.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> list, ParseException e) {
-                if (e == null) {
-                    lowProductGrid = (GridView) view.findViewById(R.id.lowProductGrid);
-                    lowAdpater = new ProductGridViewAdpater(context, R.layout.grid_item_layout, list);
-                    lowProductGrid.setAdapter(lowAdpater);
-                } else {
-                    e.printStackTrace();
-                }
-            }
-        });
         lowButton = (Button) view.findViewById(R.id.lowButton);
 
+        new LoadDataTask().execute();
     }
 
     private void getWidgetControl() {
@@ -184,6 +131,83 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
         intent.putExtra("label", label);
         intent.putExtra("typeProduct", typeProduct);
         startActivity(intent);
+    }
 
+    private class LoadDataTask extends AsyncTask<Void, Void, Void> {
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            ParseQuery<ParseObject> query = ParseHelper.getBannerImage();
+            try {
+                listBanner = new ArrayList<>(query.find());
+                for (int i = 0; i < listBanner.size(); i++) {
+                    slideImages.add(listBanner.get(i).getString(BANNER_URL));
+                }
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+            //recent product
+
+            ParseQuery<ParseObject> recentQuery = ParseHelper.getProductQuery(RECENT_PRODUCT, NORMAL_PRODUCT);
+            try {
+                listRecentProduct = new ArrayList<>(recentQuery.find());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+            //high product
+            ParseQuery<ParseObject> highQuery = ParseHelper.getProductQuery(HIGH_PRODUCT, NORMAL_PRODUCT);
+            try {
+                listHighProduct = new ArrayList<>(highQuery.find());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+            //medium product
+            ParseQuery<ParseObject> mediumQuery = ParseHelper.getProductQuery(MEDIUM_PRODUCT, NORMAL_PRODUCT);
+            try {
+                listMediumProduct = new ArrayList<>(mediumQuery.find());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+            //low product
+            ParseQuery<ParseObject> lowQuery = ParseHelper.getProductQuery(LOW_PRODUCT, NORMAL_PRODUCT);
+            try {
+                listLowProduct = new ArrayList<>(lowQuery.find());
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            viewSwitcher.showNext();
+            SlideAdapter adapter = new SlideAdapter(context, slideImages);
+            slide.setAdapter(adapter);
+            indicator.setViewPager(slide);
+
+            recentAdpater = new ProductGridViewAdapter(context, R.layout.grid_item_layout, listRecentProduct);
+            recentProductGrid.setAdapter(recentAdpater);
+
+            highAdpater = new ProductGridViewAdapter(context, R.layout.grid_item_layout, listHighProduct);
+            highProductGrid.setAdapter(highAdpater);
+
+            mediumAdpater = new ProductGridViewAdapter(context, R.layout.grid_item_layout, listMediumProduct);
+            mediumProductGrid.setAdapter(mediumAdpater);
+
+            lowAdpater = new ProductGridViewAdapter(context, R.layout.grid_item_layout, listLowProduct);
+            lowProductGrid.setAdapter(lowAdpater);
+
+        }
     }
 }

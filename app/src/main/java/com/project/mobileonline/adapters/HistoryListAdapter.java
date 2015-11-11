@@ -6,14 +6,18 @@ import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.daimajia.swipe.SwipeLayout;
+import com.daimajia.swipe.adapters.ArraySwipeAdapter;
+import com.parse.FindCallback;
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.project.mobileonline.R;
-import com.project.mobileonline.activities.HistoryOrderActivity;
+import com.project.mobileonline.activities.HistoryDetailActivity;
 import com.project.mobileonline.utils.HelperClass;
+import com.project.mobileonline.utils.ParseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,21 +32,21 @@ import static com.project.mobileonline.models.Constants.TOTAL_AMOUNT;
 /**
  * Created by Nguyen Dinh Duc on 9/28/2015.
  */
-public class HistoryListAdapter extends ArrayAdapter<ParseObject> {
+public class HistoryListAdapter extends ArraySwipeAdapter<ParseObject> {
     Context context;
     int layoutId;
     ArrayList<ParseObject> orders;
 
-    public HistoryListAdapter(Context context, int resource, List<ParseObject> objects) {
+    public HistoryListAdapter(Context context, int resource, ArrayList<ParseObject> objects) {
         super(context, resource, objects);
         this.context = context;
         layoutId = resource;
-        orders = new ArrayList<>(objects);
+        orders = objects;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder viewHolder;
+        final ViewHolder viewHolder;
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(layoutId, null);
@@ -53,13 +57,16 @@ public class HistoryListAdapter extends ArrayAdapter<ParseObject> {
             viewHolder.statusIcon = (ImageView) convertView.findViewById(R.id.status_icon);
             viewHolder.statusContent = (TextView) convertView.findViewById(R.id.status_content);
             viewHolder.orderDate = (TextView) convertView.findViewById(R.id.orderDate);
+            viewHolder.yes = (TextView) convertView.findViewById(R.id.yes);
+            viewHolder.no = (TextView) convertView.findViewById(R.id.no);
+            viewHolder.historySwipeLayout = (SwipeLayout) convertView.findViewById(R.id.historySwipeLayout);
             convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         final ParseObject order = orders.get(position);
         viewHolder.orderMoney.setText(order.getNumber(TOTAL_AMOUNT).toString());
-        viewHolder.orderQuantity.setText(viewHolder.orderQuantity.getText() + " " + order.getInt(ORDER_QUANTITY));
+        viewHolder.orderQuantity.setText(context.getString(R.string.quantity) + " " + order.getInt(ORDER_QUANTITY));
         switch (order.getInt(ORDER_STATUS)) {
             case STATUS_DONE:
                 viewHolder.statusIcon.setImageResource(R.drawable.done);
@@ -78,12 +85,38 @@ public class HistoryListAdapter extends ArrayAdapter<ParseObject> {
         viewHolder.historyLvItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, HistoryOrderActivity.class);
-                intent.putExtra("order",order.getObjectId());
+                Intent intent = new Intent(context, HistoryDetailActivity.class);
+                intent.putExtra("order", order.getObjectId());
                 context.startActivity(intent);
             }
         });
+        viewHolder.yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                orders.remove(order);
+                ParseHelper.getOrderedProductList(order).findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> list, ParseException e) {
+                        ParseObject.deleteAllInBackground(list);
+                        order.deleteInBackground();
+
+                    }
+                });
+                notifyDataSetChanged();
+            }
+        });
+        viewHolder.no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewHolder.historySwipeLayout.close();
+            }
+        });
         return convertView;
+    }
+
+    @Override
+    public int getSwipeLayoutResourceId(int position) {
+        return R.id.historySwipeLayout;
     }
 
     class ViewHolder {
@@ -93,5 +126,7 @@ public class HistoryListAdapter extends ArrayAdapter<ParseObject> {
         ImageView statusIcon;
         TextView statusContent;
         TextView orderDate;
+        TextView yes, no;
+        SwipeLayout historySwipeLayout;
     }
 }

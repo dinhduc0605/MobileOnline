@@ -1,6 +1,9 @@
 package com.project.mobileonline.activities;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,12 +16,16 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ViewSwitcher;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.parse.FindCallback;
 import com.parse.GetCallback;
+import com.parse.ParseACL;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.PreviewSmallSizeAdapter;
 import com.project.mobileonline.models.Constants;
@@ -36,6 +43,7 @@ import static com.project.mobileonline.models.Constants.CPU;
 import static com.project.mobileonline.models.Constants.FRONT_CAMERA;
 import static com.project.mobileonline.models.Constants.INTERNAL_STORAGE;
 import static com.project.mobileonline.models.Constants.OS;
+import static com.project.mobileonline.models.Constants.PRODUCT_MANUFACTURE;
 import static com.project.mobileonline.models.Constants.PRODUCT_PRICE;
 import static com.project.mobileonline.models.Constants.PRODUCT_QUANTITY;
 import static com.project.mobileonline.models.Constants.RAM;
@@ -50,10 +58,11 @@ public class ProductDetailActivity extends AppCompatActivity {
     RecyclerView previewSmallSlide;
     PreviewSmallSizeAdapter smallSizeAdapter;
     ImageView backgroundProduct;
-    TextView detailPrice, detailProductQuantity, screenSpec, frontCameraSpec, backCameraSpec, osSpec,
+    TextView detailPrice, detailManufacture, detailProductQuantity, screenSpec, frontCameraSpec, backCameraSpec, osSpec,
             graphicSpec, cpuSpec, ramSpec, internalSpec, sdcardSpec, simSpec, batterySpec, connectSpec;
     RatingBar ratingBar;
     Button addToCart;
+    ViewSwitcher viewSwitcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +80,10 @@ public class ProductDetailActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(getIntent().getStringExtra("productName"));
 
+        viewSwitcher = (ViewSwitcher) findViewById(R.id.viewSwitcher);
         backgroundProduct = (ImageView) findViewById(R.id.backgroundProduct);
         detailPrice = (TextView) findViewById(R.id.detailPrice);
+        detailManufacture = (TextView) findViewById(R.id.detailManufacture);
         detailProductQuantity = (TextView) findViewById(R.id.detailProductQuantity);
         screenSpec = (TextView) findViewById(R.id.screenSpec);
         frontCameraSpec = (TextView) findViewById(R.id.frontCameraSpec);
@@ -115,7 +126,8 @@ public class ProductDetailActivity extends AppCompatActivity {
                             connectSpec.setText(parseObject.getString(CONECTION));
                         }
                     });
-                    detailPrice.setText(parseObject.getNumber(PRODUCT_PRICE).toString());
+                    detailPrice.setText("Price: " + parseObject.getNumber(PRODUCT_PRICE).toString());
+                    detailManufacture.setText("Manufacture: " + parseObject.getString(PRODUCT_MANUFACTURE));
                     detailProductQuantity.setText(getString(R.string.quantity) + parseObject.getNumber(PRODUCT_QUANTITY));
                     ImageLoader.getInstance().displayImage(parseObject.getString(BACKGROUND_IMAGE), backgroundProduct);
                     List<String> imageUrls = parseObject.getList(SMALL_SLIDE_IMAGE);
@@ -125,19 +137,66 @@ public class ProductDetailActivity extends AppCompatActivity {
                     addToCart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            ParseObject cart = new ParseObject(SHOPPING_CART_TABLE);
-                            cart.put(CART_PRODUCT_ID, parseObject);
-                            cart.put(SHIP_QUANTITY, 1);
-                            MainActivity.carts.add(cart);
-                            Toast.makeText(getBaseContext(), "Added in cart", Toast.LENGTH_SHORT).show();
+
+                            ParseQuery.getQuery(SHOPPING_CART_TABLE)
+                                    .fromLocalDatastore()
+                                    .include(CART_PRODUCT_ID)
+                                    .findInBackground(new FindCallback<ParseObject>() {
+                                        @Override
+                                        public void done(List<ParseObject> list, ParseException e) {
+                                            boolean check = false;
+                                            if (e == null) {
+                                                for (int i = 0; i < list.size(); i++) {
+                                                    if (list.get(i).getParseObject(CART_PRODUCT_ID).getObjectId().equals(parseObject.getObjectId()))
+                                                        check = true;
+                                                }
+                                            }
+                                            if (check) {
+                                                showDialog();
+                                            } else {
+                                                ParseObject cart = new ParseObject(SHOPPING_CART_TABLE);
+                                                cart.put(CART_PRODUCT_ID, parseObject);
+                                                cart.put(SHIP_QUANTITY, 1);
+                                                if (ParseUser.getCurrentUser() != null) {
+                                                    cart.setACL(new ParseACL(ParseUser.getCurrentUser()));
+                                                }
+                                                cart.pinInBackground();
+                                                Toast.makeText(getBaseContext(), getString(R.string.addToCartBtn), Toast.LENGTH_SHORT).show();
+                                            }
+                                        }
+                                    });
                         }
+
                     });
+                    viewSwitcher.showNext();
                 } else {
-                    Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();
                 }
             }
         });
 
+    }
+
+    private void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Already in cart!");
+        builder.setMessage("Do you want go to cart?");
+        builder.setIcon(R.drawable.ic_info_black_48dp);
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent = new Intent(getBaseContext(), CartActivity.class);
+                startActivity(intent);
+                dialog.cancel();
+            }
+        });
+        builder.show();
     }
 
     private void getControlWidget() {

@@ -1,19 +1,18 @@
 package com.project.mobileonline.utils;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import java.io.File;
-import java.io.FileInputStream;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 /**
  * Created by Nguyen Dinh Duc on 9/16/2015.
@@ -44,7 +43,8 @@ public class HelperClass {
     }
 
     public static String changeDateFormat(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy", Locale.US);
+        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         return format.format(date);
     }
+
 }

@@ -6,6 +6,7 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ViewSwitcher;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -13,7 +14,6 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.HistoryListAdapter;
-import com.project.mobileonline.models.Order;
 import com.project.mobileonline.utils.ParseHelper;
 
 import java.util.ArrayList;
@@ -25,6 +25,7 @@ import java.util.List;
 public class HistoryFragment extends ListFragment {
     HistoryListAdapter adapter;
     Context context;
+    ViewSwitcher viewSwitcher;
 
     @Override
     public void onAttach(Context context) {
@@ -34,20 +35,25 @@ public class HistoryFragment extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        return inflater.inflate(R.layout.fragment_news_history, null, false);
+        View view = inflater.inflate(R.layout.fragment_news_history, null, false);
+        viewSwitcher = (ViewSwitcher) view.findViewById(R.id.viewSwitcher);
+        return view;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        ParseHelper parseHelper = new ParseHelper();
-        ParseQuery<ParseObject> query = parseHelper.getHistoryOrderQuery();
+        ParseQuery<ParseObject> query = ParseHelper.getHistoryOrderQuery();
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> list, ParseException e) {
-                adapter = new HistoryListAdapter(context, R.layout.list_item_history_layout, list);
-                setListAdapter(adapter);
+                if (e == null) {
+                    adapter = new HistoryListAdapter(context, R.layout.list_item_history_layout, new ArrayList<>(list));
+                    setListAdapter(adapter);
+                    viewSwitcher.showNext();
+                } else {
+                    e.printStackTrace();
+                }
             }
         });
     }
