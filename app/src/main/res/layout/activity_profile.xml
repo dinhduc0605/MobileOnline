@@ -87,10 +87,9 @@
 
                             <EditText
                                 android:id="@+id/email_profile"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="false"
-                                android:text="dinhduc0605@gmail.com"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -112,8 +111,7 @@
                                 android:id="@+id/phone_profile"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="false"
-                                android:text="01694949947"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
 
@@ -136,8 +134,7 @@
                                 android:id="@+id/address_profile"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="false"
-                                android:text="Nguyen Khoai Hoang Mai"/>
+                                android:enabled="false"/>
 
                         </LinearLayout>
                     </LinearLayout>
@@ -212,7 +209,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:enabled="false"
-                                android:text="06/05/1994"/>
+                                android:hint="dd-MM-yyyy"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -231,8 +228,7 @@
                                 android:id="@+id/gender_profile"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:enabled="false"
-                                android:text="Male"/>
+                                android:enabled="false"/>
 
                             <TextView
                                 android:layout_width="wrap_content"

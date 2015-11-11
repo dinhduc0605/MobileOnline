@@ -45,7 +45,6 @@ public class HistoryDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-
         viewSwitcher = (ViewSwitcher) findViewById(R.id.viewSwitcher);
         orderedProductList = (GridView) findViewById(R.id.orderedProductList);
         Log.w(TAG, getIntent().getStringExtra("order"));

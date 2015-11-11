@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
     android:orientation="vertical"
     tools:context="com.project.mobileonline.activities.AboutActivity">
 
@@ -9,16 +10,14 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:paddingTop="66dp">
+            android:paddingRight="@dimen/activity_horizontal_margin">
 
             <TextView
                 android:layout_width="match_parent"
@@ -41,13 +40,15 @@
                 android:autoLink="email|phone"
                 android:text="@string/contact" />
 
-            <com.google.android.gms.maps.MapView
+            <ImageView
                 android:id="@+id/mapview"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="15dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/map">
 
-            </com.google.android.gms.maps.MapView>
+            </ImageView>
 
             <TextView
                 android:layout_width="wrap_content"

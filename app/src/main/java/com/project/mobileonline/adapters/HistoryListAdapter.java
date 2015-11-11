@@ -16,7 +16,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.project.mobileonline.R;
 import com.project.mobileonline.activities.HistoryDetailActivity;
-import com.project.mobileonline.utils.HelperClass;
+import com.project.mobileonline.utils.DateFormat;
 import com.project.mobileonline.utils.ParseHelper;
 
 import java.util.ArrayList;
@@ -81,7 +81,7 @@ public class HistoryListAdapter extends ArraySwipeAdapter<ParseObject> {
                 viewHolder.statusContent.setText(R.string.abort);
                 break;
         }
-        viewHolder.orderDate.setText(HelperClass.changeDateFormat(order.getCreatedAt()));
+        viewHolder.orderDate.setText(DateFormat.changeDateToString(order.getCreatedAt()));
         viewHolder.historyLvItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

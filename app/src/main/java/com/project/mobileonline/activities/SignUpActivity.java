@@ -11,6 +11,7 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 import com.project.mobileonline.R;
+import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.utils.Loading;
 
 public class SignUpActivity extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class SignUpActivity extends AppCompatActivity {
         user.setUsername(usernameEdit.getText().toString());
         user.setPassword(passwordEdit.getText().toString());
         user.setEmail(emailEdit.getText().toString());
+        user.put(Constants.USER_TYPE, 0);
         final Loading loadingDialog = new Loading(this);
         loadingDialog.show();
         user.signUpInBackground(new SignUpCallback() {

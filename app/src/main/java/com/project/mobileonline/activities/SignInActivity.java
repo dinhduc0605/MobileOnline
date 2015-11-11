@@ -11,11 +11,10 @@ import android.widget.Toast;
 
 import com.parse.LogInCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.project.mobileonline.R;
 import com.project.mobileonline.utils.Loading;
-
-import static com.project.mobileonline.activities.LoadingActivity.login;
 
 /**
  * Created by Nguyen Dinh Duc on 9/14/2015.
@@ -45,6 +44,11 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void done(ParseUser parseUser, ParseException e) {
                 if (e == null) {
+                    try {
+                        ParseObject.unpinAll("guest");
+                    } catch (ParseException e1) {
+                        e1.printStackTrace();
+                    }
                     Intent intent = new Intent(getBaseContext(), MainActivity.class);
                     startActivity(intent);
                     finish();

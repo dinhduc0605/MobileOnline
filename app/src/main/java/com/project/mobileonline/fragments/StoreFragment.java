@@ -26,6 +26,7 @@ import com.project.mobileonline.utils.ParseHelper;
 import com.viewpagerindicator.CirclePageIndicator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.project.mobileonline.models.Constants.BANNER_URL;
 import static com.project.mobileonline.models.Constants.HIGH_PRODUCT;
@@ -50,6 +51,8 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
             listHighProduct = new ArrayList<>(),
             listMediumProduct = new ArrayList<>(),
             listLowProduct = new ArrayList<>();
+    List<ParseObject> listCompoundProduct = new ArrayList<>();
+
     ProgressBar storeProgress;
     ViewSwitcher viewSwitcher;
 
@@ -184,7 +187,23 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
 
-
+//            List<ParseQuery<ParseObject>> queries = new ArrayList<>();
+//            queries.add(recentQuery);
+//            queries.add(highQuery);
+//            queries.add(mediumQuery);
+//            queries.add(lowQuery);
+//            ParseQuery<ParseObject> mainQuery = ParseQuery.or(queries);
+//            try {
+//                listCompoundProduct = mainQuery.find();
+//                for (int i = 0; i < 3; i++) {
+//                    listRecentProduct.add(listCompoundProduct.get(i));
+//                    listHighProduct.add(listCompoundProduct.get(i + 3));
+//                    listMediumProduct.add(listCompoundProduct.get(i + 6));
+//                    listLowProduct.add(listCompoundProduct.get(i + 9));
+//                }
+//            } catch (ParseException e) {
+//                e.printStackTrace();
+//            }
             return null;
         }
 

@@ -2,27 +2,21 @@ package com.project.mobileonline.activities;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.project.mobileonline.R;
 import com.project.mobileonline.utils.SetColoStatusBar;
-import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 public class AboutActivity extends AppCompatActivity {
-    MapView mapView;
+    ImageView mapView;
     GoogleMap googleMap;
 
     @Override
@@ -34,22 +28,29 @@ public class AboutActivity extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         SetColoStatusBar.setColor(this);
 
-        mapView = (MapView) findViewById(R.id.mapview);
-        mapView.onCreate(savedInstanceState);
-        googleMap = mapView.getMap();
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(21.0070516, 105.84289560000002)));
-        MapsInitializer.initialize(this);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(21.0070516, 105.84289560000002), 15);
-        googleMap.moveCamera(cameraUpdate);
-        googleMap.getUiSettings().setScrollGesturesEnabled(false);
-        googleMap.getUiSettings().setZoomGesturesEnabled(false);
-        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+        mapView = (ImageView) findViewById(R.id.mapview);
+        mapView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onMapClick(LatLng latLng) {
+            public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:21.0070516,105.84289560000002"));
                 startActivity(intent);
             }
         });
+//        mapView.onCreate(savedInstanceState);
+//        googleMap = mapView.getMap();
+//        googleMap.addMarker(new MarkerOptions().position(new LatLng(21.0070516, 105.84289560000002)));
+//        MapsInitializer.initialize(this);
+//        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(new LatLng(21.0070516, 105.84289560000002), 15);
+//        googleMap.moveCamera(cameraUpdate);
+//        googleMap.getUiSettings().setScrollGesturesEnabled(false);
+//        googleMap.getUiSettings().setZoomGesturesEnabled(false);
+//        googleMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+//            @Override
+//            public void onMapClick(LatLng latLng) {
+//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:21.0070516,105.84289560000002"));
+//                startActivity(intent);
+//            }
+//        });
     }
 
     @Override
@@ -73,21 +74,21 @@ public class AboutActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mapView.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mapView.onDestroy();
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mapView.onLowMemory();
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        mapView.onResume();
+//    }
+//
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        mapView.onDestroy();
+//    }
+//
+//    @Override
+//    public void onLowMemory() {
+//        super.onLowMemory();
+//        mapView.onLowMemory();
+//    }
 }

@@ -9,7 +9,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,8 +20,9 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.project.mobileonline.R;
-import com.project.mobileonline.models.Constants;
-import com.project.mobileonline.utils.HelperClass;
+import com.project.mobileonline.utils.CheckAvailable;
+import com.project.mobileonline.utils.DateFormat;
+import com.project.mobileonline.utils.ImageProcess;
 import com.project.mobileonline.utils.SetColoStatusBar;
 
 import java.io.IOException;
@@ -30,11 +30,13 @@ import java.io.IOException;
 import static com.project.mobileonline.models.Constants.ADDRESS;
 import static com.project.mobileonline.models.Constants.AVATAR_IMAGE_NAME;
 import static com.project.mobileonline.models.Constants.BIRTHDAY;
+import static com.project.mobileonline.models.Constants.DIRECTORY_PATH;
 import static com.project.mobileonline.models.Constants.EMAIL;
 import static com.project.mobileonline.models.Constants.FIRSTNAME;
 import static com.project.mobileonline.models.Constants.GENDER;
 import static com.project.mobileonline.models.Constants.LASTNAME;
 import static com.project.mobileonline.models.Constants.PHONE;
+import static com.project.mobileonline.models.Constants.PICK_IMAGE_CODE;
 import static com.project.mobileonline.models.Constants.USERNAME;
 
 /**
@@ -65,7 +67,7 @@ public class ProfileActivity extends AppCompatActivity {
         actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         avatar = (ImageView) findViewById(R.id.avatar_icon);
-        avatarPath = Constants.DIRECTORY_PATH + currentUser.getString(USERNAME) + "/" + AVATAR_IMAGE_NAME;
+        avatarPath = DIRECTORY_PATH + currentUser.getString(USERNAME) + "/" + AVATAR_IMAGE_NAME;
         Bitmap bitmap = BitmapFactory.decodeFile(avatarPath);
         if (bitmap != null) {
             avatar.setImageBitmap(bitmap);
@@ -85,8 +87,8 @@ public class ProfileActivity extends AppCompatActivity {
         address.setText(currentUser.getString(ADDRESS));
         firstName.setText(currentUser.getString(FIRSTNAME));
         lastName.setText(currentUser.getString(LASTNAME));
-//        birthday.setText(HelperClass.changeDateFormat(currentUser.getDate(BIRTHDAY)));
-        gender.setText(currentUser.getBoolean(GENDER) ? "Male" : "Female");
+        birthday.setText(DateFormat.changeDateToString(currentUser.getDate(BIRTHDAY)));
+        gender.setText(currentUser.getString(GENDER));
     }
 
     private void getWidgetControl() {
@@ -95,7 +97,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("image/*");
-                startActivityForResult(Intent.createChooser(intent, "Select Picture..."), Constants.PICK_IMAGE_CODE);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture..."), PICK_IMAGE_CODE);
             }
         });
     }
@@ -104,13 +106,13 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
-            if (requestCode == Constants.PICK_IMAGE_CODE) {
+            if (requestCode == PICK_IMAGE_CODE) {
                 if (data != null) {
                     try {
                         Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
                         avatar.setImageBitmap(bitmap);
-                        Bitmap smallSizeBitmap = HelperClass.getBitmapSameSizeToView(avatar);
-                        filePath = HelperClass.saveBitmapToFile(avatarPath, smallSizeBitmap);
+                        Bitmap smallSizeBitmap = ImageProcess.getBitmapSameSizeToView(avatar);
+                        filePath = ImageProcess.saveBitmapToFile(avatarPath, smallSizeBitmap);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -136,36 +138,48 @@ public class ProfileActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.editProfile:
-                enableOrDisable(email);
-                enableOrDisable(phone);
-                enableOrDisable(address);
-                enableOrDisable(firstName);
-                enableOrDisable(lastName);
-                enableOrDisable(birthday);
-                enableOrDisable(gender);
+
                 if (enable) {
-                    enable = false;
-                    item.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_mode_edit_white_24dp));
-                    currentUser.put(EMAIL, email.getText().toString());
-                    currentUser.put(PHONE, phone.getText().toString());
-                    currentUser.put(ADDRESS, address.getText().toString());
-                    currentUser.put(FIRSTNAME, firstName.getText().toString());
-                    currentUser.put(LASTNAME, lastName.getText().toString());
-//                    currentUser.put(BIRTHDAY, birthday.getText());
-                    currentUser.put(GENDER, gender.getText().toString().equals("Male"));
-                    currentUser.saveInBackground(new SaveCallback() {
-                        @Override
-                        public void done(ParseException e) {
-                            if (e == null) {
-                                Toast.makeText(getBaseContext(), "Profile updated", Toast.LENGTH_SHORT).show();
-                            } else {
-                                Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    String date = birthday.getText().toString();
+                    if (DateFormat.isDateValid(date)) {
+                        enable = false;
+                        email.setEnabled(enable);
+                        phone.setEnabled(enable);
+                        address.setEnabled(enable);
+                        firstName.setEnabled(enable);
+                        lastName.setEnabled(enable);
+                        birthday.setEnabled(enable);
+                        gender.setEnabled(enable);
+
+                        item.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_mode_edit_white_24dp));
+                        currentUser.put(EMAIL, email.getText().toString());
+                        currentUser.put(PHONE, phone.getText().toString());
+                        currentUser.put(ADDRESS, address.getText().toString());
+                        currentUser.put(FIRSTNAME, firstName.getText().toString());
+                        currentUser.put(LASTNAME, lastName.getText().toString());
+                        currentUser.put(BIRTHDAY, DateFormat.changeStringToDate(birthday.getText().toString()));
+                        currentUser.put(GENDER, gender.getText().toString());
+                        currentUser.saveInBackground(new SaveCallback() {
+                            @Override
+                            public void done(ParseException e) {
+                                if (e == null) {
+                                    Toast.makeText(getBaseContext(), "Profile updated", Toast.LENGTH_SHORT).show();
+                                }
                             }
-                        }
-                    });
+                        });
+                    } else {
+                        CheckAvailable.showDialogNetwork(this, "Birthday Invalid", "Birth day must be right format");
+                    }
 
                 } else {
                     enable = true;
+                    email.setEnabled(enable);
+                    phone.setEnabled(enable);
+                    address.setEnabled(enable);
+                    firstName.setEnabled(enable);
+                    lastName.setEnabled(enable);
+                    birthday.setEnabled(enable);
+                    gender.setEnabled(enable);
                     item.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_done_white_24dp));
                 }
                 break;
@@ -174,11 +188,4 @@ public class ProfileActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void enableOrDisable(EditText editText) {
-        if (enable) {
-            editText.setEnabled(false);
-        } else {
-            editText.setEnabled(true);
-        }
-    }
 }

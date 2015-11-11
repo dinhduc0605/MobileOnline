@@ -2,10 +2,7 @@ package com.project.mobileonline.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
-import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +16,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.parse.ParseObject;
 import com.project.mobileonline.R;
 import com.project.mobileonline.activities.NewsContentActivity;
-import com.project.mobileonline.utils.HelperClass;
+import com.project.mobileonline.utils.DateFormat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,15 +65,8 @@ public class NewsListAdapter extends ArrayAdapter<ParseObject> {
         final ParseObject news = newsList.get(position);
 //        viewHolder.summary.setText(news.getString());
         viewHolder.title.setText(news.getString(TITLE));
-//        imageLoader.displayImage(news.getString(NEWS_IMAGE), viewHolder.imageView, options);
-        String url = news.getString(NEWS_IMAGE);
-        url = url.substring(url.indexOf(",") + 1);
-        url = url.substring(0, url.indexOf('"'));
-        Log.w(TAG, url);
-        byte[] bytes = Base64.decode(url, Base64.DEFAULT);
-        Bitmap image = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-        viewHolder.imageView.setImageBitmap(image);
-        viewHolder.datePublish.setText(HelperClass.changeDateFormat(news.getCreatedAt()));
+        imageLoader.displayImage(news.getString(NEWS_IMAGE), viewHolder.imageView, options);
+        viewHolder.datePublish.setText(DateFormat.changeDateToString(news.getCreatedAt()));
         viewHolder.newsItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

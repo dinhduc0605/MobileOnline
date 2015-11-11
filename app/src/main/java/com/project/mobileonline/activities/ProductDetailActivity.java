@@ -42,11 +42,16 @@ import static com.project.mobileonline.models.Constants.CONECTION;
 import static com.project.mobileonline.models.Constants.CPU;
 import static com.project.mobileonline.models.Constants.FRONT_CAMERA;
 import static com.project.mobileonline.models.Constants.INTERNAL_STORAGE;
+import static com.project.mobileonline.models.Constants.NUMBER_STAR;
 import static com.project.mobileonline.models.Constants.OS;
 import static com.project.mobileonline.models.Constants.PRODUCT_MANUFACTURE;
 import static com.project.mobileonline.models.Constants.PRODUCT_PRICE;
 import static com.project.mobileonline.models.Constants.PRODUCT_QUANTITY;
 import static com.project.mobileonline.models.Constants.RAM;
+import static com.project.mobileonline.models.Constants.RATE_NUMBER_STAR;
+import static com.project.mobileonline.models.Constants.RATE_PRODUCT;
+import static com.project.mobileonline.models.Constants.RATE_TABLE;
+import static com.project.mobileonline.models.Constants.RATE_USER;
 import static com.project.mobileonline.models.Constants.SCREEN;
 import static com.project.mobileonline.models.Constants.SDCARD;
 import static com.project.mobileonline.models.Constants.SHIP_QUANTITY;
@@ -63,6 +68,8 @@ public class ProductDetailActivity extends AppCompatActivity {
     RatingBar ratingBar;
     Button addToCart;
     ViewSwitcher viewSwitcher;
+    ParseObject rate;
+    ParseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +86,8 @@ public class ProductDetailActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(getIntent().getStringExtra("productName"));
+
+        currentUser = ParseUser.getCurrentUser();
 
         viewSwitcher = (ViewSwitcher) findViewById(R.id.viewSwitcher);
         backgroundProduct = (ImageView) findViewById(R.id.backgroundProduct);
@@ -97,17 +106,66 @@ public class ProductDetailActivity extends AppCompatActivity {
         simSpec = (TextView) findViewById(R.id.simSpec);
         batterySpec = (TextView) findViewById(R.id.batterySpec);
         connectSpec = (TextView) findViewById(R.id.connectSpec);
-        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
         addToCart = (Button) findViewById(R.id.addToCart);
+        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        if (currentUser == null) {
+            ratingBar.setVisibility(View.GONE);
+        }
 
         previewSmallSlide = (RecyclerView) findViewById(R.id.previewProductSmallSlide);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         previewSmallSlide.setLayoutManager(layoutManager);
         ParseQuery<ParseObject> query = ParseQuery.getQuery(Constants.PRODUCT_TABLE);
+
         query.getInBackground(getIntent().getStringExtra("productId"), new GetCallback<ParseObject>() {
             @Override
             public void done(final ParseObject parseObject, ParseException e) {
                 if (e == null) {
+                    ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery(RATE_TABLE);
+                    parseQuery.whereEqualTo(RATE_USER, currentUser);
+                    parseQuery.whereEqualTo(RATE_PRODUCT, parseObject);
+                    parseQuery.findInBackground(new FindCallback<ParseObject>() {
+                        @Override
+                        public void done(List<ParseObject> list, ParseException e) {
+                            if (e == null && currentUser != null) {
+                                if (list.size() > 0) {
+                                    rate = list.get(0);
+                                } else {
+                                    rate = new ParseObject(RATE_TABLE);
+                                    rate.put(RATE_USER, ParseUser.getCurrentUser());
+                                    rate.put(RATE_PRODUCT, parseObject);
+                                    rate.put(RATE_NUMBER_STAR, "0");
+                                }
+                                ratingBar.setRating(Float.parseFloat(rate.getString(RATE_NUMBER_STAR)));
+                                ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+                                    @Override
+                                    public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                                        //save numstar vao bang Rate
+                                        rate.put(RATE_NUMBER_STAR, String.valueOf(rating));
+                                        rate.saveInBackground();
+                                        //tim cac rate cua product hien tai
+                                        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery(RATE_TABLE);
+                                        parseQuery.whereEqualTo(RATE_PRODUCT, parseObject);
+                                        parseQuery.findInBackground(new FindCallback<ParseObject>() {
+                                            @Override
+                                            public void done(List<ParseObject> list, ParseException e) {
+                                                float total = 0;
+                                                //tinh tong so star da dc rate cua product nay boi tat ca cac user
+                                                for (int i = 0; i < list.size(); i++) {
+                                                    total += Float.parseFloat(list.get(i).getString(RATE_NUMBER_STAR));
+                                                }
+                                                //luu so star trung binh vao bang Product
+                                                parseObject.put(NUMBER_STAR, String.valueOf(total / list.size()));
+                                                parseObject.saveInBackground();
+                                            }
+                                        });
+                                        Toast.makeText(ProductDetailActivity.this, "Thank you", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
+                        }
+                    });
+                    //Lay thong so ky thuat cua product hien tai
                     ParseObject specification = parseObject.getParseObject(SPECIFICATION);
                     specification.fetchIfNeededInBackground(new GetCallback<ParseObject>() {
                         @Override
@@ -160,7 +218,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                                                 if (ParseUser.getCurrentUser() != null) {
                                                     cart.setACL(new ParseACL(ParseUser.getCurrentUser()));
                                                 }
-                                                cart.pinInBackground();
+                                                cart.pinInBackground("guest");
                                                 Toast.makeText(getBaseContext(), getString(R.string.addToCartBtn), Toast.LENGTH_SHORT).show();
                                             }
                                         }

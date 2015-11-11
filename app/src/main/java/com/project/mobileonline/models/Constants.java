@@ -21,6 +21,7 @@ public class Constants {
     public static final String LASTNAME = "lastName";
     public static final String FIRSTNAME = "firstName";
     public static final String AVATAR = "avatar";
+    public static final String USER_TYPE = "type";
 
     //Product Type
     public static final int NONE = 0;
@@ -114,6 +115,9 @@ public class Constants {
     public static final String BANNER_TABLE = "Banner";
     public static final String BANNER_URL = "imageUrl";
 
-    //Role
-    public static final String ROLE_GUEST = "Guest";
+    //rate table
+    public static final String RATE_TABLE = "Rate";
+    public static final String RATE_NUMBER_STAR = "numStar";
+    public static final String RATE_USER = "user";
+    public static final String RATE_PRODUCT = "product";
 }

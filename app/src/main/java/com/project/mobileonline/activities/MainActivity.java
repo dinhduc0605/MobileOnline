@@ -38,6 +38,7 @@ import com.project.mobileonline.fragments.NewsFragment;
 import com.project.mobileonline.fragments.StoreFragment;
 import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.models.DrawerItem;
+import com.project.mobileonline.utils.CheckAvailable;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.io.File;
@@ -114,21 +115,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void signOut() {
 
-        ParseUser.logOutInBackground(new LogOutCallback() {
-            @Override
-            public void done(ParseException e) {
-                if (e != null) {
-                    Toast.makeText(getBaseContext(), e.getMessage() , Toast.LENGTH_SHORT).show();
-                } else {
-                    removeHeaderView();
-                    adapter.clear();
-                    initData();
-                    adapter.notifyDataSetChanged();
-                    Toast.makeText(getBaseContext(), "signed out", Toast.LENGTH_SHORT).show();
+        if (CheckAvailable.hasInternet(this)) {
+            ParseUser.logOutInBackground(new LogOutCallback() {
+                @Override
+                public void done(ParseException e) {
+                    if (e != null) {
+                        Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                    } else {
+                        removeHeaderView();
+                        adapter.clear();
+                        initData();
+                        adapter.notifyDataSetChanged();
+                        Toast.makeText(getBaseContext(), "signed out", Toast.LENGTH_SHORT).show();
+                    }
                 }
-            }
-        });
-        ParseUser.logOut();
+            });
+        } else {
+            CheckAvailable.showDialogNetwork(this,"No Internet","Turn on internet then try again");
+        }
 
     }
 
