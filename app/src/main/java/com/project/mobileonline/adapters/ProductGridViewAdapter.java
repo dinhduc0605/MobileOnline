@@ -17,6 +17,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.parse.ParseObject;
 import com.project.mobileonline.R;
 import com.project.mobileonline.activities.ProductDetailActivity;
+import com.project.mobileonline.utils.StringProcess;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,7 +79,7 @@ public class ProductGridViewAdapter extends ArrayAdapter<ParseObject> {
         imageLoader.displayImage(product.getString(PRODUCT_THUMBNAIL_IMAGE), viewHolder.productImage, options);
         viewHolder.productName.setText(product.getString(PRODUCT_NAME));
         viewHolder.ratingBar.setRating(Float.parseFloat(product.getString(NUMBER_STAR)));
-        viewHolder.price.setText(product.getNumber(PRODUCT_PRICE).toString());
+        viewHolder.price.setText(StringProcess.formatPrice((Integer) product.getNumber(PRODUCT_PRICE)));
         return convertView;
     }
 

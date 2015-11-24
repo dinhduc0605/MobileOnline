@@ -18,6 +18,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.parse.ParseObject;
 import com.project.mobileonline.R;
 import com.project.mobileonline.activities.ProductDetailActivity;
+import com.project.mobileonline.utils.StringProcess;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,7 @@ public class HistoryOrderAdapter extends ArrayAdapter<ParseObject> {
         imageLoader.displayImage(product.getString(PRODUCT_THUMBNAIL_IMAGE), finalViewHolder.productImage, options);
         finalViewHolder.productName.setText(product.getString(PRODUCT_NAME));
         finalViewHolder.ratingBar.setRating(Float.parseFloat(product.getString(NUMBER_STAR)));
-        finalViewHolder.price.setText(product.getNumber(PRODUCT_PRICE).toString());
+        finalViewHolder.price.setText(StringProcess.formatPrice((Integer) product.getNumber(PRODUCT_PRICE)));
         finalViewHolder.gridViewItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

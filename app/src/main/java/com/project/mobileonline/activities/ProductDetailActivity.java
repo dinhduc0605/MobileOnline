@@ -30,7 +30,9 @@ import com.project.mobileonline.R;
 import com.project.mobileonline.adapters.PreviewSmallSizeAdapter;
 import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.utils.SetColoStatusBar;
+import com.project.mobileonline.utils.StringProcess;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import static com.project.mobileonline.models.Constants.BACKGROUND_IMAGE;
@@ -184,7 +186,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                             connectSpec.setText(parseObject.getString(CONECTION));
                         }
                     });
-                    detailPrice.setText("Price: " + parseObject.getNumber(PRODUCT_PRICE).toString());
+                    detailPrice.setText("Price: " + StringProcess.formatPrice((Integer) parseObject.getNumber(PRODUCT_PRICE)));
                     detailManufacture.setText("Manufacture: " + parseObject.getString(PRODUCT_MANUFACTURE));
                     detailProductQuantity.setText(getString(R.string.quantity) + parseObject.getNumber(PRODUCT_QUANTITY));
                     ImageLoader.getInstance().displayImage(parseObject.getString(BACKGROUND_IMAGE), backgroundProduct);

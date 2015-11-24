@@ -18,6 +18,7 @@ import com.project.mobileonline.R;
 import com.project.mobileonline.activities.HistoryDetailActivity;
 import com.project.mobileonline.utils.DateFormat;
 import com.project.mobileonline.utils.ParseHelper;
+import com.project.mobileonline.utils.StringProcess;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,7 +66,7 @@ public class HistoryListAdapter extends ArraySwipeAdapter<ParseObject> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         final ParseObject order = orders.get(position);
-        viewHolder.orderMoney.setText(order.getNumber(TOTAL_AMOUNT).toString());
+        viewHolder.orderMoney.setText(StringProcess.formatPrice((Integer) order.getNumber(TOTAL_AMOUNT)));
         viewHolder.orderQuantity.setText(context.getString(R.string.quantity) + " " + order.getInt(ORDER_QUANTITY));
         switch (order.getInt(ORDER_STATUS)) {
             case STATUS_DONE:

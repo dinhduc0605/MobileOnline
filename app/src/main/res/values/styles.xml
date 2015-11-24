@@ -35,7 +35,7 @@
     <style name="detailPrice">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">24sp</item>
         <item name="android:textColor">@color/accent_color</item>
     </style>
 
@@ -55,5 +55,13 @@
         <item name="android:textSize">15sp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="textLabel" parent="TextAppearance.AppCompat">
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="colorAccent">@color/textFloat</item>
+        <item name="colorControlNormal">@color/textFloat</item>
+        <item name="colorControlActivated">@color/textFloat</item>
+        <item name="colorControlHighlight">@color/textFloat</item>
     </style>
 </resources>

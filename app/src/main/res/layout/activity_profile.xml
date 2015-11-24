@@ -20,18 +20,7 @@
                 android:layout_height="200dp"
                 android:layout_below="@+id/actionbar"
                 android:scaleType="centerCrop"
-                android:src="@drawable/header_view_background"/>
-
-            <TextView
-                android:id="@+id/name_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/avatar_icon"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="70dp"
-                android:text="NGUYEN DINH DUC"
-                android:textSize="28sp"
-                android:textStyle="bold"/>
+                android:src="@drawable/header_view_bg"/>
 
             <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/avatar_icon"

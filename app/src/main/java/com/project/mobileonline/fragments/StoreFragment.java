@@ -204,6 +204,7 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
 //            } catch (ParseException e) {
 //                e.printStackTrace();
 //            }
+
             return null;
         }
 

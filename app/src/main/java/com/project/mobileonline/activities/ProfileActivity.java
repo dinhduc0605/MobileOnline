@@ -87,7 +87,9 @@ public class ProfileActivity extends AppCompatActivity {
         address.setText(currentUser.getString(ADDRESS));
         firstName.setText(currentUser.getString(FIRSTNAME));
         lastName.setText(currentUser.getString(LASTNAME));
-        birthday.setText(DateFormat.changeDateToString(currentUser.getDate(BIRTHDAY)));
+        if (currentUser.getDate(BIRTHDAY) != null) {
+            birthday.setText(DateFormat.changeDateToString(currentUser.getDate(BIRTHDAY)));
+        }
         gender.setText(currentUser.getString(GENDER));
     }
 

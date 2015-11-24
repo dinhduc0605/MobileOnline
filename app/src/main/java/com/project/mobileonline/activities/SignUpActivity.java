@@ -14,6 +14,13 @@ import com.project.mobileonline.R;
 import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.utils.Loading;
 
+import static com.project.mobileonline.models.Constants.ADDRESS;
+import static com.project.mobileonline.models.Constants.BIRTHDAY;
+import static com.project.mobileonline.models.Constants.FIRSTNAME;
+import static com.project.mobileonline.models.Constants.GENDER;
+import static com.project.mobileonline.models.Constants.LASTNAME;
+import static com.project.mobileonline.models.Constants.PHONE;
+
 public class SignUpActivity extends AppCompatActivity {
     EditText passwordEdit, usernameEdit, emailEdit;
 
@@ -36,6 +43,11 @@ public class SignUpActivity extends AppCompatActivity {
         user.setUsername(usernameEdit.getText().toString());
         user.setPassword(passwordEdit.getText().toString());
         user.setEmail(emailEdit.getText().toString());
+        user.put(FIRSTNAME, "");
+        user.put(LASTNAME, "");
+        user.put(PHONE, "");
+        user.put(ADDRESS, "");
+        user.put(GENDER, "");
         user.put(Constants.USER_TYPE, 0);
         final Loading loadingDialog = new Loading(this);
         loadingDialog.show();
@@ -51,9 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
                             Toast.makeText(getBaseContext(), "username or password is missing",
                                     Toast.LENGTH_SHORT).show();
                             break;
-                        case 202:
-                        case 203:
-                        case 125:
+                        default:
                             Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_SHORT)
                                     .show();
                             break;

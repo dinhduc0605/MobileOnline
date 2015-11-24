@@ -14,6 +14,9 @@ public class Loading {
         dialog.setMessage("Loading....");
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
+        
+
+
     }
 
     public void show() {

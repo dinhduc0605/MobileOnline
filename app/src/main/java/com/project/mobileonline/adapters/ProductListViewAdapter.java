@@ -18,6 +18,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.parse.ParseObject;
 import com.project.mobileonline.R;
 import com.project.mobileonline.activities.ProductDetailActivity;
+import com.project.mobileonline.utils.StringProcess;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,15 +88,15 @@ public class ProductListViewAdapter extends ArrayAdapter<ParseObject> {
         imageLoader.displayImage(product.getString(PRODUCT_THUMBNAIL_IMAGE), viewHolder.thumbnailLv, options);
         viewHolder.productNameLv.setText(product.getString(PRODUCT_NAME));
         viewHolder.manufactureLv.setText(product.getString(PRODUCT_MANUFACTURE));
-        viewHolder.priceLv.setText(product.getNumber(PRODUCT_PRICE).toString());
+        viewHolder.priceLv.setText(StringProcess.formatPrice((Integer) product.getNumber(PRODUCT_PRICE)));
         viewHolder.ratingBarLv.setRating(Float.parseFloat(product.getString(NUMBER_STAR)));
         viewHolder.quantity.setText(product.getNumber(PRODUCT_QUANTITY).toString());
         if (product.getInt(PRODUCT_TYPE) == SALE_OFF_PRODUCT) {
-            viewHolder.priceLv.setText(product.getNumber(PRODUCT_SALE_PRICE).toString());
-            viewHolder.otherPriceLv.setText(product.getNumber(PRODUCT_PRICE).toString());
+            viewHolder.priceLv.setText(StringProcess.formatPrice((Integer) product.getNumber(PRODUCT_SALE_PRICE)));
+            viewHolder.otherPriceLv.setText(StringProcess.formatPrice((Integer) product.getNumber(PRODUCT_PRICE)));
         } else if (product.getInt(PRODUCT_TYPE) == OLD_PRODUCT) {
-            viewHolder.priceLv.setText(product.getNumber(PRODUCT_OLD_PRICE).toString());
-            viewHolder.otherPriceLv.setText(product.getNumber(PRODUCT_PRICE).toString());
+            viewHolder.priceLv.setText(StringProcess.formatPrice((Integer) product.getNumber(PRODUCT_OLD_PRICE)));
+            viewHolder.otherPriceLv.setText(StringProcess.formatPrice((Integer) product.getNumber(PRODUCT_PRICE)));
         }
         viewHolder.productLvItem.setOnClickListener(new View.OnClickListener() {
             @Override

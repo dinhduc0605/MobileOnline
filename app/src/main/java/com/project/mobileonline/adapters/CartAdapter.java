@@ -18,6 +18,7 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.project.mobileonline.R;
 import com.project.mobileonline.models.Constants;
+import com.project.mobileonline.utils.StringProcess;
 
 import java.util.ArrayList;
 
@@ -90,7 +91,7 @@ public class CartAdapter extends ArraySwipeAdapter<ParseObject> {
                 if (e == null) {
                     imageLoader.displayImage(parseObject.getString(PRODUCT_THUMBNAIL_IMAGE), finalViewHolder.thumbnailLv, options);
                     finalViewHolder.productNameLv.setText(parseObject.getString(PRODUCT_NAME));
-                    finalViewHolder.priceLv.setText(parseObject.getNumber(PRODUCT_PRICE).toString());
+                    finalViewHolder.priceLv.setText(StringProcess.formatPrice((Integer) parseObject.getNumber(PRODUCT_PRICE)));
                     finalViewHolder.ratingBarLv.setRating(Float.parseFloat(parseObject.getString(NUMBER_STAR)));
                     finalViewHolder.quantity.setText(cart.getNumber(SHIP_QUANTITY).toString());
 

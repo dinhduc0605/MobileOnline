@@ -16,6 +16,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -42,7 +43,9 @@ import com.project.mobileonline.utils.CheckAvailable;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 
 import java.io.File;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import static com.project.mobileonline.models.Constants.USERNAME;
 
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
     ParseUser currentUser;
     String avatarPath;
     FloatingActionButton fab;
+    boolean exit = false;
     int[] userIconRes = {
             0,
             R.drawable.ic_store_black_48dp,
@@ -131,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         } else {
-            CheckAvailable.showDialogNetwork(this,"No Internet","Turn on internet then try again");
+            CheckAvailable.showDialogNetwork(this, "No Internet", "Turn on internet then try again");
         }
 
     }
@@ -340,6 +344,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        String s = DecimalFormat.getCurrencyInstance().format(160000);
+        Log.w(TAG,s);
+        if (!exit) {
+            Toast.makeText(this, "Press back again to exit", Toast.LENGTH_SHORT).show();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    exit = true;
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    exit = false;
+                }
+            }).start();
+        }else {
+            super.onBackPressed();
+        }
     }
 
     @Override
