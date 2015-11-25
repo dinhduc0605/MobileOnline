@@ -78,7 +78,9 @@ public class ProductGridViewAdapter extends ArrayAdapter<ParseObject> {
         });
         imageLoader.displayImage(product.getString(PRODUCT_THUMBNAIL_IMAGE), viewHolder.productImage, options);
         viewHolder.productName.setText(product.getString(PRODUCT_NAME));
-        viewHolder.ratingBar.setRating(Float.parseFloat(product.getString(NUMBER_STAR)));
+        if (product.getString(NUMBER_STAR) != null) {
+            viewHolder.ratingBar.setRating(Float.parseFloat(product.getString(NUMBER_STAR)));
+        }
         viewHolder.price.setText(StringProcess.formatPrice((Integer) product.getNumber(PRODUCT_PRICE)));
         return convertView;
     }

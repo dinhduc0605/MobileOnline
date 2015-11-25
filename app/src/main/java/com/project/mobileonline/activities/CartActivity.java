@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -49,6 +50,7 @@ import static com.project.mobileonline.models.Constants.TYPE_STORE;
 import static com.project.mobileonline.models.Constants.USER_ID;
 
 public class CartActivity extends AppCompatActivity {
+    public static final String TAG = "CartActivity";
     Button order;
     ListView listProductInCart;
     CartAdapter adapter;
@@ -80,7 +82,6 @@ public class CartActivity extends AppCompatActivity {
         }
         adapter = new CartAdapter(getBaseContext(), R.layout.item_cart_layout, carts);
         listProductInCart.setAdapter(adapter);
-
 
     }
 
@@ -153,13 +154,15 @@ public class CartActivity extends AppCompatActivity {
                                 @Override
                                 public void done(ParseException e) {
                                     if (e == null) {
+                                        Log.w(TAG, carts.size() + "");
                                         for (int i = 0; i < carts.size(); i++) {
                                             ParseObject cart = carts.get(i);
                                             cart.put(CART_ODER_ID, order);
                                             cart.saveInBackground();
                                             cart.unpinInBackground();
                                         }
-                                        adapter.clear();
+
+                                        carts.clear();
                                         adapter.notifyDataSetChanged();
                                         Toast.makeText(getBaseContext(), "Order successfully", Toast.LENGTH_SHORT).show();
                                     }

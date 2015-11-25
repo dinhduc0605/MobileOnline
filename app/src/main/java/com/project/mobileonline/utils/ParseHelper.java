@@ -38,16 +38,16 @@ public class ParseHelper {
                 break;
             case HIGH_PRODUCT:
                 productQuery.setLimit(3);
-                productQuery.whereGreaterThan(PRODUCT_PRICE, 8000000);
+                productQuery.whereGreaterThan(PRODUCT_PRICE, 800);
                 break;
             case MEDIUM_PRODUCT:
                 productQuery.setLimit(3);
-                productQuery.whereLessThan(PRODUCT_PRICE, 8000000);
-                productQuery.whereGreaterThan(PRODUCT_PRICE, 4000000);
+                productQuery.whereLessThan(PRODUCT_PRICE, 800);
+                productQuery.whereGreaterThan(PRODUCT_PRICE, 400);
                 break;
             case LOW_PRODUCT:
                 productQuery.setLimit(3);
-                productQuery.whereLessThan(PRODUCT_PRICE, 4000000);
+                productQuery.whereLessThan(PRODUCT_PRICE, 400);
                 break;
             case ALL_PRODUCT:
                 break;

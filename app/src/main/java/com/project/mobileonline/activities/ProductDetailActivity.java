@@ -32,7 +32,6 @@ import com.project.mobileonline.models.Constants;
 import com.project.mobileonline.utils.SetColoStatusBar;
 import com.project.mobileonline.utils.StringProcess;
 
-import java.text.DecimalFormat;
 import java.util.List;
 
 import static com.project.mobileonline.models.Constants.BACKGROUND_IMAGE;
@@ -197,7 +196,7 @@ public class ProductDetailActivity extends AppCompatActivity {
                     addToCart.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
+//Tim cac shopping cart trong local db
                             ParseQuery.getQuery(SHOPPING_CART_TABLE)
                                     .fromLocalDatastore()
                                     .include(CART_PRODUCT_ID)
@@ -217,10 +216,11 @@ public class ProductDetailActivity extends AppCompatActivity {
                                                 ParseObject cart = new ParseObject(SHOPPING_CART_TABLE);
                                                 cart.put(CART_PRODUCT_ID, parseObject);
                                                 cart.put(SHIP_QUANTITY, 1);
+                                                //Neu nguoi dung co tai khoan thi moi set ACL.
                                                 if (ParseUser.getCurrentUser() != null) {
                                                     cart.setACL(new ParseACL(ParseUser.getCurrentUser()));
                                                 }
-                                                cart.pinInBackground("guest");
+                                                cart.pinInBackground();
                                                 Toast.makeText(getBaseContext(), getString(R.string.addToCartBtn), Toast.LENGTH_SHORT).show();
                                             }
                                         }

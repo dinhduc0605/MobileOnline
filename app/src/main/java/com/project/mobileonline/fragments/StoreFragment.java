@@ -1,5 +1,6 @@
 package com.project.mobileonline.fragments;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -22,9 +23,12 @@ import com.project.mobileonline.R;
 import com.project.mobileonline.activities.ShowSpecificProduct;
 import com.project.mobileonline.adapters.ProductGridViewAdapter;
 import com.project.mobileonline.adapters.SlideAdapter;
+import com.project.mobileonline.animation.DepthPageTransformer;
+import com.project.mobileonline.custom.ViewpagerScroller;
 import com.project.mobileonline.utils.ParseHelper;
 import com.viewpagerindicator.CirclePageIndicator;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,6 +43,7 @@ import static com.project.mobileonline.models.Constants.RECENT_PRODUCT;
  * Created by Nguyen Dinh Duc on 8/29/2015.
  */
 public class StoreFragment extends Fragment implements View.OnClickListener {
+    Activity activity;
     Context context;
     ArrayList<String> slideImages = new ArrayList<>();
     ViewPager slide;
@@ -60,6 +65,7 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
     public void onAttach(Context context) {
         super.onAttach(context);
         this.context = context;
+        activity = (Activity) context;
     }
 
     @Nullable
@@ -83,6 +89,7 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initView(final View view) {
+
         viewSwitcher = (ViewSwitcher) view.findViewById(R.id.viewSwitcher);
         storeProgress = (ProgressBar) view.findViewById(R.id.storeProgress);
         slide = (ViewPager) view.findViewById(R.id.view_pager);
@@ -136,6 +143,39 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
         startActivity(intent);
     }
 
+    private void autoSlide() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(3000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    activity.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            slide.setCurrentItem((slide.getCurrentItem() + 1) % slideImages.size(), true);
+                        }
+                    });
+                }
+            }
+        }).start();
+    }
+
+    private void changePagerScroller() {
+        try {
+            Field mscroller = ViewPager.class.getDeclaredField("mScroller");
+            mscroller.setAccessible(true);
+            ViewpagerScroller scroller = new ViewpagerScroller(getContext());
+            mscroller.set(slide, scroller);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
     private class LoadDataTask extends AsyncTask<Void, Void, Void> {
 
         @Override
@@ -187,24 +227,6 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
                 e.printStackTrace();
             }
 
-//            List<ParseQuery<ParseObject>> queries = new ArrayList<>();
-//            queries.add(recentQuery);
-//            queries.add(highQuery);
-//            queries.add(mediumQuery);
-//            queries.add(lowQuery);
-//            ParseQuery<ParseObject> mainQuery = ParseQuery.or(queries);
-//            try {
-//                listCompoundProduct = mainQuery.find();
-//                for (int i = 0; i < 3; i++) {
-//                    listRecentProduct.add(listCompoundProduct.get(i));
-//                    listHighProduct.add(listCompoundProduct.get(i + 3));
-//                    listMediumProduct.add(listCompoundProduct.get(i + 6));
-//                    listLowProduct.add(listCompoundProduct.get(i + 9));
-//                }
-//            } catch (ParseException e) {
-//                e.printStackTrace();
-//            }
-
             return null;
         }
 
@@ -214,7 +236,10 @@ public class StoreFragment extends Fragment implements View.OnClickListener {
             viewSwitcher.showNext();
             SlideAdapter adapter = new SlideAdapter(context, slideImages);
             slide.setAdapter(adapter);
+            slide.setPageTransformer(true, new DepthPageTransformer());
+            changePagerScroller();
             indicator.setViewPager(slide);
+            autoSlide();
 
             recentAdpater = new ProductGridViewAdapter(context, R.layout.grid_item_layout, listRecentProduct);
             recentProductGrid.setAdapter(recentAdpater);
